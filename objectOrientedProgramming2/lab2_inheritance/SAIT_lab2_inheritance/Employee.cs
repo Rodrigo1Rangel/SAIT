@@ -8,9 +8,9 @@ using System.Threading.Tasks;
 
 namespace SAIT_lab2_inheritance
 {
-    internal class Employee
+    internal class Employee // children: Salaried, PartTime, Wages
+
     {
-        // children: Salaried, PartTime, Wages
         private string _id;
         public string Id { get { return _id; } set { _id = value; } }
         
@@ -32,9 +32,16 @@ namespace SAIT_lab2_inheritance
         private string _dept;
         public string Dept { get { return _dept; } set { _dept = value; } }
 
+        private double _weeklyPayment;
+        public double WeeklyPayment { get { return _weeklyPayment; } set { _weeklyPayment = value; } }
+
         public Employee (string id, string name, string address, string phone, long sin, string dob, string dept)
         {
-
+         
+        }
+        public override string ToString()
+        {
+            return ;
         }
     }
 }
