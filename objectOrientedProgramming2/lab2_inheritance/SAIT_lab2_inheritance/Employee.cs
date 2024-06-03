@@ -6,6 +6,7 @@ using System.Net.Sockets;
 using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
+using static SAIT_lab2_inheritance.EmployeeCategory;
 
 namespace SAIT_lab2_inheritance
 {
@@ -36,11 +37,82 @@ namespace SAIT_lab2_inheritance
         private double _weeklyPayment;
         public double WeeklyPayment { get { return _weeklyPayment; } set { _weeklyPayment = value; } }
 
+        private EmployeeContractCategory _contractCategory;
+        public EmployeeContractCategory ContractCategory { get { return _contractCategory; } set { _contractCategory = value; } }
+
+        static private List<Employee> employeeList = new List<Employee>();
+
         public Employee (string id, string name, string address, string phone, long sin, string dob, string dept)
         {
-
-
+            Id = id.Trim();
+            Name = name.Trim();
+            Address = address.Trim();
+            Phone = phone.Trim();
+            Sin = sin;
+            Dob = dob.Trim();
+            Dept = dept.Trim();
         }
+
+        // Salaried contract constructor
+        public Employee(string id, string name, string address, string phone, long sin, string dob, string dept, double weeklySalary)
+        {
+            Id = id.Trim();
+            Name = name.Trim();
+            Address = address.Trim();
+            Phone = phone.Trim();
+            Sin = sin;
+            Dob = dob.Trim();
+            Dept = dept.Trim();
+
+            // Employee Category check
+            EmployeeCategory thisContractCategory = new EmployeeCategory(id);
+            ContractCategory = thisContractCategory.getEmployeeContractCategory();
+            if (ContractCategory == EmployeeContractCategory.Salaried)
+            {
+                Employee employee = new Salaried(id, name, address, phone, sin, dob, dept, weeklySalary);
+                Salaried salariedEmployee = (Salaried)employee;
+                employeeList.Add(salariedEmployee);
+            }
+            else
+            // The only Contract Category class that takes 7 parameters is Salaried, so
+            // there is no other conditional to be met
+            {
+                throw new ArgumentException("Employee ID number does not correspond to a Salaried contract.", "Employee ID number.");
+            }
+        }
+
+        // Wages or PartTime contract constructor
+        public Employee(string id, string name, string address, string phone, long sin, string dob, string dept, double rate, double hours)
+        {
+            Id = id.Trim();
+            Name = name.Trim();
+            Address = address.Trim();
+            Phone = phone.Trim();
+            Sin = sin;
+            Dob = dob.Trim();
+            Dept = dept.Trim();
+
+            // Employee Category check
+            EmployeeCategory thisContractCategory = new EmployeeCategory(id);
+            ContractCategory = thisContractCategory.getEmployeeContractCategory();
+            if (ContractCategory == EmployeeContractCategory.Wages)
+            {
+                Employee employee = new Wages(id, name, address, phone, sin, dob, dept, rate, hours);
+                Wages salariedEmployee = (Wages)employee;
+                employeeList.Add(salariedEmployee);
+            }
+            else if (ContractCategory == EmployeeContractCategory.PartTime)
+            {
+                Employee employee = new PartTime(id, name, address, phone, sin, dob, dept, rate, hours);
+                PartTime salariedEmployee = (PartTime)employee;
+                employeeList.Add(salariedEmployee);
+            }
+            else
+            {
+                throw new ArgumentException("Employee ID number does not correspond to a Wages or Part-time contract.", "Employee ID number.");
+            }
+        }
+
         public override string ToString()
         {
             return ;

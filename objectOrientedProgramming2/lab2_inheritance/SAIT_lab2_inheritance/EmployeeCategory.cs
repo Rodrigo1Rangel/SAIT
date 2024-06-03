@@ -36,7 +36,12 @@ namespace SAIT_lab2_inheritance
 
         public EmployeeCategory (string id)
         {
-            if (SalariedInitial.Contains(id.Substring(0,1)))
+            int idCheck;
+            if (!int.TryParse(id, out idCheck))
+            {
+                    throw new ArgumentException("The employee ID must numerical.", "Employee ID number");
+            }
+            else if (SalariedInitial.Contains(id.Substring(0,1)))
             {
                 ContractCategory = EmployeeContractCategory.Salaried;
             }
@@ -44,10 +49,11 @@ namespace SAIT_lab2_inheritance
             {
                 ContractCategory = EmployeeContractCategory.Wages;
             }
-            else if (PartTimeInitial.Contains(id.Substring(0, 1)))
+            else // if (PartTimeInitial.Contains(id.Substring(0, 1)))
             {
-                ContractCategory = EmployeeContractCategory.Wages;
+                ContractCategory = EmployeeContractCategory.PartTime;
             }
+            
 
 
             /* Inefficient:

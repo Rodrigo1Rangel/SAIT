@@ -21,7 +21,6 @@ namespace SAIT_lab2_inheritance
             Dob = dob.Trim();
             Dept = dept.Trim();
 
-
             // Calculate payment
             WeeklyPayment = weeklySalary;
         }

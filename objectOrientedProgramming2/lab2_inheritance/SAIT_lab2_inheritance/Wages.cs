@@ -38,7 +38,7 @@ namespace SAIT_lab2_inheritance
 
             if (Hours > OvertimeHourThreshold)
             {
-                WeeklyPayment = rate * OvertimeHourThreshold + (Hours - OvertimeHourThreshold) * rate * OvertimePaymentRate;
+                WeeklyPayment = Rate * OvertimeHourThreshold + (Hours - OvertimeHourThreshold) * Rate * OvertimePaymentRate;
             }
             else
             {
