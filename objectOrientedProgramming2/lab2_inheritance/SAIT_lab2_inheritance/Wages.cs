@@ -22,9 +22,6 @@ namespace SAIT_lab2_inheritance
 
         public Wages(string id, string name, string address, string phone, long sin, string dob, string dept, double rate, double hours) : base(id, name, address, phone, sin, dob, dept)
         {
-            //  Wage employees have ID numbers starting with 5-7
-
-
             // Calculate payment
             OvertimePaymentRate = 1.5F;
             OvertimeHourThreshold = 40;

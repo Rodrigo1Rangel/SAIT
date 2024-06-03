@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Configuration;
 using System.Linq;
 using System.Net.Sockets;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -37,7 +38,8 @@ namespace SAIT_lab2_inheritance
 
         public Employee (string id, string name, string address, string phone, long sin, string dob, string dept)
         {
-         
+
+
         }
         public override string ToString()
         {
