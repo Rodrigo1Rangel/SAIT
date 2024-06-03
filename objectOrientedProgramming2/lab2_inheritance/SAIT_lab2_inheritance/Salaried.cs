@@ -13,6 +13,15 @@ namespace SAIT_lab2_inheritance
 
         public Salaried(string id, string name, string address, string phone, long sin, string dob, string dept, double weeklySalary) : base(id, name, address, phone, sin, dob, dept)
         {
+            Id = id.Trim();
+            Name = name.Trim();
+            Address = address.Trim();
+            Phone = phone.Trim();
+            Sin = sin;
+            Dob = dob.Trim();
+            Dept = dept.Trim();
+
+
             // Calculate payment
             WeeklyPayment = weeklySalary;
         }

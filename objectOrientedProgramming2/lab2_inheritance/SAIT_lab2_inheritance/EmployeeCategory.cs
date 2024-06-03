@@ -80,6 +80,10 @@ namespace SAIT_lab2_inheritance
             */
         }
 
+        public EmployeeContractCategory getEmployeeContractCategory()
+        {
+            return ContractCategory;
         }
+
     }
 }
