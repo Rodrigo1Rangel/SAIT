@@ -33,7 +33,7 @@ namespace SAIT_lab2_inheritance
         private string[] _partimeInitial = { "8", "9" };
         public string[] PartTimeInitial { get { return _partimeInitial; } set { _partimeInitial = value; } }
 
-
+        // ------------------------ CONSTRUCTORS ------------------------
         public EmployeeCategory (string id)
         {
             int idCheck;
@@ -55,6 +55,7 @@ namespace SAIT_lab2_inheritance
             }
         }
 
+        // -------------------------- METHODS --------------------------
         public EmployeeContractCategory getEmployeeContractCategory()
         {
             return ContractCategory;

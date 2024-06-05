@@ -5,93 +5,102 @@ using System.Text;
 using System.Threading.Tasks;
 using static SAIT_lab2_inheritance.EmployeeCategory;
 using System.IO;
+using SAIT_lab2_inheritance.Properties;
+using System.Xml.Linq;
+using System.ComponentModel;
 
 namespace SAIT_lab2_inheritance
 {
     internal class Program
     {
+        static private EmployeeContractCategory _contractCategory;
+        static public EmployeeContractCategory ContractCategory { get { return _contractCategory; } set { _contractCategory = value; } }
+
         static private List<Employee> _employeeList = new List<Employee>();
         static public List<Employee> EmployeeList { get { return _employeeList; } set { _employeeList = value; } }
 
         static void Main(string[] args)
         {
+            // a. Fill a list with objects based on the supplied data file.
             LoadData();
+
+            // b. Calculate and return the average weekly pay for all employees.
+            Console.WriteLine($"The average weekly pay for all employees is: ${AverageWeeklyPay():N}");
+
+
         }
 
-        // METHODS
+        // -------------------------- METHODS --------------------------
 
         static public List<Employee> LoadData()
         // Fill a list with objects based on the supplied data file.
         {
-            string employeeFileLine;
-            string path = Directory.GetCurrentDirectory();
-            string filePath = $"{path}/../res/employees.txt";
-            StreamReader readFile = null; // it needs to be assigned to later be able to be ".Close()"
-
-            try
+            // Is "res" a prerequisite to have "Resources" as the parent directory after we added the resource to Visual Studio?
+            // C: \Users\rodri\OneDrive\Documents\GitHub\SAIT\objectOrientedProgramming2\lab2_inheritance\SAIT_lab2_inheritance\Resources\employees.txt
+            string[] datasetPerLine = Resources.employees.Split('\n');
+            foreach (string lineItem in datasetPerLine)
             {
-                readFile = new StreamReader(filePath);
-                employeeFileLine = readFile.ReadLine();
+                double weeklySalary;
+                long sin;
+                double rate;
+                double hours;
 
-                while (employeeFileLine != null)
+                char delimiter = ':';
+                string[] employeeItems = lineItem.Split(delimiter);
+                EmployeeCategory thisContractCategory = new EmployeeCategory(employeeItems[0]);
+                ContractCategory = thisContractCategory.getEmployeeContractCategory();
+
+                // Salaried contract check
+                if (employeeItems.Length == 8 && ContractCategory == EmployeeContractCategory.Salaried)
                 {
-                    char delimiter = ':';
-                    string[] employeeItems = employeeFileLine.Split(delimiter);
-
-                    double weeklySalary;
-                    long sin;
-                    double rate;
-                    double hours;
-                    if (employeeItems.Length == 8) 
-                    // is there another way less manual to address the array items as inputs when calling a constructor?
-                    // create a constructor to do it
-                    {
-                        long.TryParse(employeeItems[4], out sin);
-                        double.TryParse(employeeItems[7], out weeklySalary);
-                        Employee employeePaymentData = new Employee(employeeItems[0], employeeItems[1], employeeItems[2], employeeItems[3], sin, employeeItems[5], employeeItems[6], weeklySalary);
-                        EmployeeList.Add(employeePaymentData);
-                        employeeFileLine = readFile.ReadLine();
-                    }
-                    if (employeeItems.Length == 9)
-                    {
-                        long.TryParse(employeeItems[4], out sin);
-                        double.TryParse(employeeItems[7], out rate);
-                        double.TryParse(employeeItems[8], out hours);
-                        Employee employeePaymentData = new Employee(employeeItems[0], employeeItems[1], employeeItems[2], employeeItems[3], sin, employeeItems[5], employeeItems[6], rate, hours);
-                        EmployeeList.Add(employeePaymentData);
-                        employeeFileLine = readFile.ReadLine();
-                    }
-                    if (employeeItems.Length < 7 || employeeItems.Length == 8)
-                    {
-                        throw new ArgumentException("Employee data is insufficient to register an employee payment in the system.", "Employee data.");
-                    }
-                    else
-                    {
-                        throw new ArgumentException("More data than expected to register an employee payment in the system was given.", "Employee data.");
-                    }
+                    long.TryParse(employeeItems[4].Trim(), out sin);
+                    double.TryParse(employeeItems[7].Trim(), out weeklySalary);
+                    Salaried employeePaymentData = new Salaried(employeeItems[0].Trim(), employeeItems[1].Trim(), employeeItems[2].Trim(), employeeItems[3].Trim(), sin, employeeItems[5].Trim(), employeeItems[6].Trim(), weeklySalary);
+                    EmployeeList.Add(employeePaymentData);
+                }
+                // Wages contract check
+                else if (employeeItems.Length == 9 && ContractCategory == EmployeeContractCategory.Wages)
+                {
+                    long.TryParse(employeeItems[4], out sin);
+                    double.TryParse(employeeItems[7], out rate);
+                    double.TryParse(employeeItems[8], out hours);
+                    Wages employeePaymentData = new Wages(employeeItems[0].Trim(), employeeItems[1].Trim(), employeeItems[2].Trim(), employeeItems[3].Trim(), sin, employeeItems[5].Trim(), employeeItems[6].Trim(), rate, hours);
+                    EmployeeList.Add(employeePaymentData);
+                }
+                // PartTime contract check
+                else if (employeeItems.Length == 9 && ContractCategory == EmployeeContractCategory.PartTime)
+                {
+                    long.TryParse(employeeItems[4], out sin);
+                    double.TryParse(employeeItems[7], out rate);
+                    double.TryParse(employeeItems[8], out hours);
+                    PartTime employeePaymentData = new PartTime(employeeItems[0].Trim(), employeeItems[1].Trim(), employeeItems[2].Trim(), employeeItems[3].Trim(), sin, employeeItems[5].Trim(), employeeItems[6].Trim(), rate, hours);
+                    EmployeeList.Add(employeePaymentData);
+                }
+                // ArgumentException when the quantity of paremeters is above or below the expected
+                else if (employeeItems.Length < 8)
+                {
+                    throw new ArgumentException("Employee data is insufficient to register an employee payment in the system.", "Employee data.");
+                }
+                else if (employeeItems.Length > 9)
+                {
+                    throw new ArgumentException("More data than expected to register an employee payment in the system was given.", "Employee data.");
                 }
             }
-            catch (Exception e)
-            {
-                Console.WriteLine($"The process failed: {e.Message}");
-            }
-            finally
-            {
-                readFile.Close();
-            }
+
             return EmployeeList;
         }
-        
+
         static public double AverageWeeklyPay()
-        // Calculate and return the average weekly pay for all employees.
+        // Return the average weekly pay for all employees.
         {
+            double totalPayAmount = 0D;
             double averagePayAmount = 0D;
             
             foreach (Employee employee in EmployeeList)
             {
-                averagePayAmount += employee.getPay();
+                totalPayAmount += employee.GetPay();
             }
-
+            averagePayAmount = totalPayAmount / EmployeeList.Count;
             return averagePayAmount;
         }
     }

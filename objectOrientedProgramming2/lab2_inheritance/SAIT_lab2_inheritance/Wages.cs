@@ -20,34 +20,32 @@ namespace SAIT_lab2_inheritance
         private float _overtimeHourThreshold; 
         public float OvertimeHourThreshold { get { return _overtimeHourThreshold; } set { _overtimeHourThreshold = value; } }
 
-        public Wages(string id, string name, string address, string phone, long sin, string dob, string dept, double rate, double hours) : base(id, name, address, phone, sin, dob, dept)
+        // ------------------------ CONSTRUCTORS ------------------------
+        public Wages(string id, string name, string address, string phone, long sin, string dob, string dept, double rate, double hours) : base(id, name, address, phone, sin, dob, dept, rate, hours)
         {
-            Id = id.Trim();
-            Name = name.Trim();
-            Address = address.Trim();
-            Phone = phone.Trim();
-            Sin = sin;
-            Dob = dob.Trim();
-            Dept = dept.Trim();
+            Rate = rate;
+            Hours = hours;
+        }
 
+        // -------------------------- METHODS --------------------------
+        public override string ToString()
+        {
+            return $"Employee data:\nID: {Id}\nName: {Name}\nAddress: {Address}]=\nPhone: {Phone}]=\nSIN: {Sin}\nDate of Birth: {Dob}\nDepartment: {Dept}\nContract Category: Wages\nHours worked: {Hours}\nHour rate: {Rate}";
+        }
+        public override double GetPay()
+        {
             // Calculate payment
             OvertimePaymentRate = 1.5F;
             OvertimeHourThreshold = 40;
-            Rate = rate;
-            Hours = hours;
-
             if (Hours > OvertimeHourThreshold)
             {
-                WeeklyPayment = Rate * OvertimeHourThreshold + (Hours - OvertimeHourThreshold) * Rate * OvertimePaymentRate;
+                WeeklySalary = Rate * OvertimeHourThreshold + (Hours - OvertimeHourThreshold) * Rate * OvertimePaymentRate;
             }
             else
             {
-                WeeklyPayment = Rate * Hours;
+                WeeklySalary = Rate * Hours;
             }
-        }
-        public override double getPay()
-        {
-            return this.WeeklyPayment;
+            return WeeklySalary;
         }
     }
 }

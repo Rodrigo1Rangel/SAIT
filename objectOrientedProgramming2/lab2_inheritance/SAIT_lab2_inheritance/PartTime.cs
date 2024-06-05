@@ -15,25 +15,23 @@ namespace SAIT_lab2_inheritance
         private double _hours;
         public double Hours { get { return _hours; } set { _hours = value; } }
 
-        public PartTime(string id, string name, string address, string phone, long sin, string dob, string dept, double rate, double hours) : base(id, name, address, phone, sin, dob, dept)
+        // ------------------------ CONSTRUCTORS ------------------------
+        public PartTime(string id, string name, string address, string phone, long sin, string dob, string dept, double rate, double hours) : base(id, name, address, phone, sin, dob, dept, rate, hours)
         {
-            Id = id.Trim();
-            Name = name.Trim();
-            Address = address.Trim();
-            Phone = phone.Trim();
-            Sin = sin;
-            Dob = dob.Trim();
-            Dept = dept.Trim();
-
-            // Calculate payment
             Rate = rate;
             Hours = hours;
-            WeeklyPayment = Rate * Hours;
-
         }
-        public override double getPay()
+
+        // -------------------------- METHODS --------------------------
+        public override string ToString()
         {
-            return this.WeeklyPayment;
+            return $"Employee data:\nID: {Id}\nName: {Name}\nAddress: {Address}]=\nPhone: {Phone}]=\nSIN: {Sin}\nDate of Birth: {Dob}\nDepartment: {Dept}\nContract Category: Part-Time\nHours worked: {Hours}\nHour rate: {Rate}";
+        }
+        public override double GetPay()
+        {
+            // Calculate payment
+            WeeklySalary = Rate * Hours;
+            return this.WeeklySalary;
         }
     }
 }

@@ -12,7 +12,7 @@ using static SAIT_lab2_inheritance.EmployeeCategory;
 namespace SAIT_lab2_inheritance
 {
 
-    internal class Employee // children: Salaried, PartTime, Wages
+    internal abstract class Employee // children: Salaried, PartTime, Wages
     {
 
         private string _id;
@@ -37,99 +37,53 @@ namespace SAIT_lab2_inheritance
         public string Dept { get { return _dept; } set { _dept = value; } }
 
         private double _weeklyPayment;
-        public double WeeklyPayment { get { return _weeklyPayment; } set { _weeklyPayment = value; } }
-
-        private EmployeeContractCategory _contractCategory;
-        public EmployeeContractCategory ContractCategory { get { return _contractCategory; } set { _contractCategory = value; } }
+        public double WeeklySalary { get { return _weeklyPayment; } set { _weeklyPayment = value; } }
 
 
-        // CONSTRUCTORS
+        // ------------------------ CONSTRUCTORS ------------------------
 
-
-        // Vanilla Employee constructor
+        /* Vanilla Employee constructor
         public Employee (string id, string name, string address, string phone, long sin, string dob, string dept)
         {
-            Id = id.Trim();
-            Name = name.Trim();
-            Address = address.Trim();
-            Phone = phone.Trim();
+            Id = id;
+            Name = name;
+            Address = address;
+            Phone = phone;
             Sin = sin;
-            Dob = dob.Trim();
-            Dept = dept.Trim();
+            Dob = dob;
+            Dept = dept;
         }
+        */
 
         // Salaried contract constructor
         public Employee(string id, string name, string address, string phone, long sin, string dob, string dept, double weeklySalary)
         {
-            Id = id.Trim();
-            Name = name.Trim();
-            Address = address.Trim();
-            Phone = phone.Trim();
+            Id = id;
+            Name = name;
+            Address = address;
+            Phone = phone;
             Sin = sin;
-            Dob = dob.Trim();
-            Dept = dept.Trim();
-
-            // Employee Category check
-            EmployeeCategory thisContractCategory = new EmployeeCategory(id);
-            ContractCategory = thisContractCategory.getEmployeeContractCategory();
-            if (ContractCategory == EmployeeContractCategory.Salaried)
-            {
-                Employee employee = new Salaried(id, name, address, phone, sin, dob, dept, weeklySalary);
-                Salaried salariedEmployee = (Salaried)employee;
-                //employeeList.Add(salariedEmployee);
-            }
-            else
-            // The only Contract Category class that takes 7 parameters is Salaried, so
-            // there is no other conditional to be met
-            {
-                throw new ArgumentException("Employee ID number does not correspond to a Salaried contract.", "Employee ID number.");
-            }
+            Dob = dob;
+            Dept = dept;
         }
 
         // Wages or PartTime contract constructor
         public Employee(string id, string name, string address, string phone, long sin, string dob, string dept, double rate, double hours)
         {
-            Id = id.Trim();
-            Name = name.Trim();
-            Address = address.Trim();
-            Phone = phone.Trim();
+            Id = id;
+            Name = name;
+            Address = address;
+            Phone = phone;
             Sin = sin;
-            Dob = dob.Trim();
-            Dept = dept.Trim();
-
-            // Employee Category check
-            EmployeeCategory thisContractCategory = new EmployeeCategory(id);
-            ContractCategory = thisContractCategory.getEmployeeContractCategory();
-            if (ContractCategory == EmployeeContractCategory.Wages)
-            {
-                Employee employee = new Wages(id, name, address, phone, sin, dob, dept, rate, hours);
-                Wages salariedEmployee = (Wages)employee;
-                //employeeList.Add(salariedEmployee);
-            }
-            else if (ContractCategory == EmployeeContractCategory.PartTime)
-            {
-                Employee employee = new PartTime(id, name, address, phone, sin, dob, dept, rate, hours);
-                PartTime salariedEmployee = (PartTime)employee;
-                //employeeList.Add(salariedEmployee);
-            }
-            else
-            {
-                throw new ArgumentException("Employee ID number does not correspond to a Wages or Part-time contract.", "Employee ID number.");
-            }
+            Dob = dob;
+            Dept = dept;
         }
 
 
-        // METHODS
+        // -------------------------- METHODS --------------------------
 
-
-        public override string ToString()
-        {
-            return "abc";
-        }
-        public virtual double getPay()
-        {
-            return 0D;
-        }
+        public abstract override string ToString();
+        public abstract double GetPay();
 
     }
 }

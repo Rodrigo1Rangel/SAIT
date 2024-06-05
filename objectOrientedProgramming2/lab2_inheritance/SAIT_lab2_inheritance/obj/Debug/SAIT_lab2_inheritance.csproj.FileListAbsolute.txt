@@ -5,3 +5,5 @@ C:\Users\rodri\OneDrive\Documents\GitHub\SAIT\objectOrientedProgramming2\lab2_in
 C:\Users\rodri\OneDrive\Documents\GitHub\SAIT\objectOrientedProgramming2\lab2_inheritance\SAIT_lab2_inheritance\obj\Debug\SAIT_lab2_inheritance.csproj.CoreCompileInputs.cache
 C:\Users\rodri\OneDrive\Documents\GitHub\SAIT\objectOrientedProgramming2\lab2_inheritance\SAIT_lab2_inheritance\obj\Debug\SAIT_lab2_inheritance.exe
 C:\Users\rodri\OneDrive\Documents\GitHub\SAIT\objectOrientedProgramming2\lab2_inheritance\SAIT_lab2_inheritance\obj\Debug\SAIT_lab2_inheritance.pdb
+C:\Users\rodri\OneDrive\Documents\GitHub\SAIT\objectOrientedProgramming2\lab2_inheritance\SAIT_lab2_inheritance\obj\Debug\SAIT_lab2_inheritance.Properties.Resources.resources
+C:\Users\rodri\OneDrive\Documents\GitHub\SAIT\objectOrientedProgramming2\lab2_inheritance\SAIT_lab2_inheritance\obj\Debug\SAIT_lab2_inheritance.csproj.GenerateResource.cache
