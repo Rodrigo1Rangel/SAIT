@@ -8,6 +8,7 @@ using System.IO;
 using SAIT_lab2_inheritance.Properties;
 using System.Xml.Linq;
 using System.ComponentModel;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace SAIT_lab2_inheritance
 {
@@ -19,13 +20,39 @@ namespace SAIT_lab2_inheritance
         static private List<Employee> _employeeList = new List<Employee>();
         static public List<Employee> EmployeeList { get { return _employeeList; } set { _employeeList = value; } }
 
+        static private List<Employee> _highestPayingEmployeeList = new List<Employee>();
+        static public List<Employee> HighestPayingEmployeeList { get { return _highestPayingEmployeeList; } set { _highestPayingEmployeeList = value; } }
+
+        static private List<Employee> _lowestPayingEmployeeList = new List<Employee>();
+        static public List<Employee> LowestPayingEmployeeList { get { return _lowestPayingEmployeeList; } set { _lowestPayingEmployeeList = value; } }
+
         static void Main(string[] args)
         {
             // a. Fill a list with objects based on the supplied data file.
             LoadData();
 
             // b. Calculate and return the average weekly pay for all employees.
-            Console.WriteLine($"The average weekly pay for all employees is: ${AverageWeeklyPay():N}");
+            AverageWeeklyPay();
+
+            /* c. Calculate and return the highest weekly pay for the wage employees, including the name of the employee.
+
+            There are two options to solve it:
+             a. Instanciate a new list, add the (employees == Wages) and then search
+                through it. -> possibly more memory space consumption
+
+             b. Filter the search each time for a specific contract category. -> likely to
+                consume less memory, but it possibly would have a longer runtime.
+
+            Although it seems that it would be useful to have a list for each contract category
+            for other future searches in the system, it would need to go through all the EmployeeList
+            items anyway to make sure that new list was updated. Therefore, I will just implement b.
+             */
+            HighestWeeklyPay(EmployeeContractCategory.Wages);
+
+            // d. Calculate and return the lowest salary for the salaried employees, including the name of the employee.
+            LowestWeeklyPaySalaried(EmployeeContractCategory.Salaried);
+
+            // e. What percentage of the company’s employees fall into each employee category?
 
 
         }
@@ -35,7 +62,7 @@ namespace SAIT_lab2_inheritance
         static public List<Employee> LoadData()
         // Fill a list with objects based on the supplied data file.
         {
-            // Is "res" a prerequisite to have "Resources" as the parent directory after we added the resource to Visual Studio?
+            // Is "res" a pre-requisite to have "Resources" as the parent directory after we have added the resource file to Visual Studio?
             // C: \Users\rodri\OneDrive\Documents\GitHub\SAIT\objectOrientedProgramming2\lab2_inheritance\SAIT_lab2_inheritance\Resources\employees.txt
             string[] datasetPerLine = Resources.employees.Split('\n');
             foreach (string lineItem in datasetPerLine)
@@ -95,13 +122,83 @@ namespace SAIT_lab2_inheritance
         {
             double totalPayAmount = 0D;
             double averagePayAmount = 0D;
-            
+
             foreach (Employee employee in EmployeeList)
             {
                 totalPayAmount += employee.GetPay();
             }
             averagePayAmount = totalPayAmount / EmployeeList.Count;
+            Console.WriteLine($"The average weekly pay for all employees is: ${averagePayAmount:N}\n");
+
             return averagePayAmount;
+        }
+
+        static public List<Employee> HighestWeeklyPay(EmployeeContractCategory targetContractCategory)
+        {
+            double highestWeeklyPayment = 0D;
+            string highestPayingEmployeeNames = "";
+
+            // Find highest payment by Contract Category
+            for (int i = 0; i < EmployeeList.Count; i++)
+            {
+                EmployeeCategory thisContractCategory = new EmployeeCategory(EmployeeList[i].Id);
+                ContractCategory = thisContractCategory.getEmployeeContractCategory();
+
+                if (ContractCategory == targetContractCategory && highestWeeklyPayment < EmployeeList[i].GetPay())
+                    {
+                        highestWeeklyPayment = EmployeeList[i].GetPay();
+                    }             
+            }
+            Console.WriteLine($"The highest {targetContractCategory} payment is of: ${highestWeeklyPayment:N}");
+
+            // Add highest paying employees by Contract Category to a list
+            foreach (Employee i in EmployeeList)
+            {
+                EmployeeCategory thisContractCategory = new EmployeeCategory(i.Id);
+                ContractCategory = thisContractCategory.getEmployeeContractCategory();
+                if (ContractCategory == targetContractCategory && highestWeeklyPayment == i.GetPay())
+                {
+                    HighestPayingEmployeeList.Add(i);
+                    highestPayingEmployeeNames += i.Name + ", ";
+                }
+            }
+            Console.WriteLine($"The {targetContractCategory} Employees who receive this amount are: {highestPayingEmployeeNames.TrimEnd(',', ' ')}\n");
+
+            return HighestPayingEmployeeList;
+        }
+
+        static public List<Employee> LowestWeeklyPaySalaried(EmployeeContractCategory targetContractCategory)
+        {
+            double lowestSalariedWeeklyPayment = 9999999999999999999999999999999999999D;
+            string lowestPayingEmployeeNames = "";
+
+            // Find lowest Salaried payment
+            for (int i = 0; i < EmployeeList.Count; i++)
+            {
+                EmployeeCategory thisContractCategory = new EmployeeCategory(EmployeeList[i].Id);
+                ContractCategory = thisContractCategory.getEmployeeContractCategory();
+                if (ContractCategory == targetContractCategory && lowestSalariedWeeklyPayment > EmployeeList[i].GetPay())
+                    {
+                        lowestSalariedWeeklyPayment = EmployeeList[i].GetPay();
+                    }
+            }
+            Console.WriteLine($"The lowest {targetContractCategory} payment is of: ${lowestSalariedWeeklyPayment:N}");
+
+            // Add lowest paying employees by Contract Category to a list
+            foreach (Employee i in EmployeeList)
+            {
+                EmployeeCategory thisContractCategory = new EmployeeCategory(i.Id);
+                ContractCategory = thisContractCategory.getEmployeeContractCategory();
+                if (ContractCategory == targetContractCategory && lowestSalariedWeeklyPayment == i.GetPay())
+                {
+                    LowestPayingEmployeeList.Add(i);
+                    lowestPayingEmployeeNames += i.Name + ", ";
+                }
+            }
+            Console.WriteLine($"The {targetContractCategory} Employees who receive this amount are: {lowestPayingEmployeeNames.TrimEnd(',', ' ')}\n");
+
+            return LowestPayingEmployeeList;
         }
     }
 }
+

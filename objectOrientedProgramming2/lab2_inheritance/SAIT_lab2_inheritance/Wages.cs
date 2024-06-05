@@ -30,7 +30,7 @@ namespace SAIT_lab2_inheritance
         // -------------------------- METHODS --------------------------
         public override string ToString()
         {
-            return $"Employee data:\nID: {Id}\nName: {Name}\nAddress: {Address}]=\nPhone: {Phone}]=\nSIN: {Sin}\nDate of Birth: {Dob}\nDepartment: {Dept}\nContract Category: Wages\nHours worked: {Hours}\nHour rate: {Rate}";
+            return $"Employee data:\n\nID: {Id}\nName: {Name}\nAddress: {Address}]=\nPhone: {Phone}]=\nSIN: {Sin}\nDate of Birth: {Dob}\nDepartment: {Dept}\nContract Category: Wages\nHours worked: {Hours}\nHour rate: {Rate}\n";
         }
         public override double GetPay()
         {
