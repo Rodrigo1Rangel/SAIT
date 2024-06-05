@@ -26,6 +26,19 @@ namespace SAIT_lab2_inheritance
         static private List<Employee> _lowestPayingEmployeeList = new List<Employee>();
         static public List<Employee> LowestPayingEmployeeList { get { return _lowestPayingEmployeeList; } set { _lowestPayingEmployeeList = value; } }
 
+        static private int _quantityEmployeeSalaried = 0;
+        static public int QuantityEmployeeSalaried { get { return _quantityEmployeeSalaried; } set { _quantityEmployeeSalaried = value; } }
+
+        static private int _quantityEmployeeWages = 0;
+        static public int QuantityEmployeeWages { get { return _quantityEmployeeWages; } set { _quantityEmployeeWages = value; } }
+
+        static private int _quantityEmployeePartTime = 0;
+        static public int QuantityEmployeePartTime { get { return _quantityEmployeePartTime; } set { _quantityEmployeePartTime = value; } }
+
+        static private int _quantityEmployee = 0;
+        static public int QuantityEmployee { get { return _quantityEmployee; } set { _quantityEmployee = value; } }
+
+
         static void Main(string[] args)
         {
             // a. Fill a list with objects based on the supplied data file.
@@ -52,9 +65,12 @@ namespace SAIT_lab2_inheritance
             // d. Calculate and return the lowest salary for the salaried employees, including the name of the employee.
             LowestWeeklyPaySalaried(EmployeeContractCategory.Salaried);
 
-            // e. What percentage of the company’s employees fall into each employee category?
-
-
+            /* e. What percentage of the company’s employees fall into each employee category?
+            We could have iterated through the employeeList checking and incrementing (extra O(N)), but I believe that it is 
+            better to have static variables that will be incremented upon file loading once, and will remain accessible
+            later on.
+            */
+            EmployeeCategoryShare();
         }
 
         // -------------------------- METHODS --------------------------
@@ -84,6 +100,7 @@ namespace SAIT_lab2_inheritance
                     double.TryParse(employeeItems[7].Trim(), out weeklySalary);
                     Salaried employeePaymentData = new Salaried(employeeItems[0].Trim(), employeeItems[1].Trim(), employeeItems[2].Trim(), employeeItems[3].Trim(), sin, employeeItems[5].Trim(), employeeItems[6].Trim(), weeklySalary);
                     EmployeeList.Add(employeePaymentData);
+                    QuantityEmployeeSalaried += 1;
                 }
                 // Wages contract check
                 else if (employeeItems.Length == 9 && ContractCategory == EmployeeContractCategory.Wages)
@@ -93,6 +110,7 @@ namespace SAIT_lab2_inheritance
                     double.TryParse(employeeItems[8], out hours);
                     Wages employeePaymentData = new Wages(employeeItems[0].Trim(), employeeItems[1].Trim(), employeeItems[2].Trim(), employeeItems[3].Trim(), sin, employeeItems[5].Trim(), employeeItems[6].Trim(), rate, hours);
                     EmployeeList.Add(employeePaymentData);
+                    QuantityEmployeeWages += 1;
                 }
                 // PartTime contract check
                 else if (employeeItems.Length == 9 && ContractCategory == EmployeeContractCategory.PartTime)
@@ -102,6 +120,7 @@ namespace SAIT_lab2_inheritance
                     double.TryParse(employeeItems[8], out hours);
                     PartTime employeePaymentData = new PartTime(employeeItems[0].Trim(), employeeItems[1].Trim(), employeeItems[2].Trim(), employeeItems[3].Trim(), sin, employeeItems[5].Trim(), employeeItems[6].Trim(), rate, hours);
                     EmployeeList.Add(employeePaymentData);
+                    QuantityEmployeePartTime += 1;
                 }
                 // ArgumentException when the quantity of paremeters is above or below the expected
                 else if (employeeItems.Length < 8)
@@ -113,7 +132,7 @@ namespace SAIT_lab2_inheritance
                     throw new ArgumentException("More data than expected to register an employee payment in the system was given.", "Employee data.");
                 }
             }
-
+            QuantityEmployee = QuantityEmployeeSalaried + QuantityEmployeeWages + QuantityEmployeePartTime;
             return EmployeeList;
         }
 
@@ -198,6 +217,11 @@ namespace SAIT_lab2_inheritance
             Console.WriteLine($"The {targetContractCategory} Employees who receive this amount are: {lowestPayingEmployeeNames.TrimEnd(',', ' ')}\n");
 
             return LowestPayingEmployeeList;
+        }
+
+        static public void EmployeeCategoryShare()
+        {
+            Console.WriteLine($"The employee share that belong to each contract category is the following: {QuantityEmployeeSalaried/ (double)QuantityEmployee:P} Salaried, {QuantityEmployeeWages/(double)QuantityEmployee:P} Wages, and {QuantityEmployeePartTime/(double)QuantityEmployee:P} Part-Time.\n");
         }
     }
 }
