@@ -31,7 +31,7 @@ namespace SAIT_lab2_inheritance
             WeeklyPayment = Rate * Hours;
 
         }
-        public double getPay()
+        public override double getPay()
         {
             return this.WeeklyPayment;
         }

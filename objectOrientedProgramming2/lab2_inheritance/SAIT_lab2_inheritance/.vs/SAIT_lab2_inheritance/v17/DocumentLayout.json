@@ -3,12 +3,16 @@
   "WorkspaceRootPath": "C:\\Users\\rodri\\OneDrive\\Documents\\GitHub\\SAIT\\objectOrientedProgramming2\\lab2_inheritance\\SAIT_lab2_inheritance\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{93644DAC-BF09-4D17-BABB-46BA7AA0F06D}|SAIT_lab2_inheritance.csproj|C:\\Users\\rodri\\OneDrive\\Documents\\GitHub\\SAIT\\objectOrientedProgramming2\\lab2_inheritance\\SAIT_lab2_inheritance\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{93644DAC-BF09-4D17-BABB-46BA7AA0F06D}|SAIT_lab2_inheritance.csproj|c:\\users\\rodri\\onedrive\\documents\\github\\sait\\objectorientedprogramming2\\lab2_inheritance\\sait_lab2_inheritance\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{93644DAC-BF09-4D17-BABB-46BA7AA0F06D}|SAIT_lab2_inheritance.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{93644DAC-BF09-4D17-BABB-46BA7AA0F06D}|SAIT_lab2_inheritance.csproj|C:\\Users\\rodri\\OneDrive\\Documents\\GitHub\\SAIT\\objectOrientedProgramming2\\lab2_inheritance\\SAIT_lab2_inheritance\\parttime.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{93644DAC-BF09-4D17-BABB-46BA7AA0F06D}|SAIT_lab2_inheritance.csproj|solutionrelative:parttime.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{93644DAC-BF09-4D17-BABB-46BA7AA0F06D}|SAIT_lab2_inheritance.csproj|C:\\Users\\rodri\\OneDrive\\Documents\\GitHub\\SAIT\\objectOrientedProgramming2\\lab2_inheritance\\SAIT_lab2_inheritance\\employee.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{93644DAC-BF09-4D17-BABB-46BA7AA0F06D}|SAIT_lab2_inheritance.csproj|solutionrelative:employee.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{93644DAC-BF09-4D17-BABB-46BA7AA0F06D}|SAIT_lab2_inheritance.csproj|C:\\Users\\rodri\\OneDrive\\Documents\\GitHub\\SAIT\\objectOrientedProgramming2\\lab2_inheritance\\SAIT_lab2_inheritance\\employeecategory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{93644DAC-BF09-4D17-BABB-46BA7AA0F06D}|SAIT_lab2_inheritance.csproj|solutionrelative:employeecategory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{93644DAC-BF09-4D17-BABB-46BA7AA0F06D}|SAIT_lab2_inheritance.csproj|C:\\Users\\rodri\\OneDrive\\Documents\\GitHub\\SAIT\\objectOrientedProgramming2\\lab2_inheritance\\SAIT_lab2_inheritance\\wages.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -19,12 +23,8 @@
       "RelativeMoniker": "D:0:0:{93644DAC-BF09-4D17-BABB-46BA7AA0F06D}|SAIT_lab2_inheritance.csproj|solutionrelative:salaried.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{93644DAC-BF09-4D17-BABB-46BA7AA0F06D}|SAIT_lab2_inheritance.csproj|c:\\users\\rodri\\onedrive\\documents\\github\\sait\\objectorientedprogramming2\\lab2_inheritance\\sait_lab2_inheritance\\employeecategory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{93644DAC-BF09-4D17-BABB-46BA7AA0F06D}|SAIT_lab2_inheritance.csproj|solutionrelative:employeecategory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{93644DAC-BF09-4D17-BABB-46BA7AA0F06D}|SAIT_lab2_inheritance.csproj|C:\\Users\\rodri\\OneDrive\\Documents\\GitHub\\SAIT\\objectOrientedProgramming2\\lab2_inheritance\\SAIT_lab2_inheritance\\employee.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{93644DAC-BF09-4D17-BABB-46BA7AA0F06D}|SAIT_lab2_inheritance.csproj|solutionrelative:employee.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{93644DAC-BF09-4D17-BABB-46BA7AA0F06D}|SAIT_lab2_inheritance.csproj|C:\\Users\\rodri\\OneDrive\\Documents\\GitHub\\SAIT\\objectOrientedProgramming2\\lab2_inheritance\\SAIT_lab2_inheritance\\parttime.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{93644DAC-BF09-4D17-BABB-46BA7AA0F06D}|SAIT_lab2_inheritance.csproj|solutionrelative:parttime.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -44,7 +44,7 @@
               "RelativeDocumentMoniker": "Program.cs",
               "ToolTip": "C:\\Users\\rodri\\OneDrive\\Documents\\GitHub\\SAIT\\objectOrientedProgramming2\\lab2_inheritance\\SAIT_lab2_inheritance\\Program.cs",
               "RelativeToolTip": "Program.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABEAAAAAAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAEwAAAANAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-06-03T14:53:42.492Z",
               "IsPinned": true,
@@ -52,13 +52,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 1,
               "Title": "Employee.cs",
               "DocumentMoniker": "C:\\Users\\rodri\\OneDrive\\Documents\\GitHub\\SAIT\\objectOrientedProgramming2\\lab2_inheritance\\SAIT_lab2_inheritance\\Employee.cs",
               "RelativeDocumentMoniker": "Employee.cs",
               "ToolTip": "C:\\Users\\rodri\\OneDrive\\Documents\\GitHub\\SAIT\\objectOrientedProgramming2\\lab2_inheritance\\SAIT_lab2_inheritance\\Employee.cs",
               "RelativeToolTip": "Employee.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAFoAAAAWAAAA",
+              "ViewState": "AQIAACgAAAAAAAAAAADwvy8AAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-06-03T15:10:08.106Z",
               "IsPinned": true,
@@ -66,55 +66,54 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 2,
               "Title": "EmployeeCategory.cs",
               "DocumentMoniker": "C:\\Users\\rodri\\OneDrive\\Documents\\GitHub\\SAIT\\objectOrientedProgramming2\\lab2_inheritance\\SAIT_lab2_inheritance\\EmployeeCategory.cs",
               "RelativeDocumentMoniker": "EmployeeCategory.cs",
               "ToolTip": "C:\\Users\\rodri\\OneDrive\\Documents\\GitHub\\SAIT\\objectOrientedProgramming2\\lab2_inheritance\\SAIT_lab2_inheritance\\EmployeeCategory.cs",
               "RelativeToolTip": "EmployeeCategory.cs",
-              "ViewState": "AQIAAB4AAAAAAAAAAAAAACoAAAANAAAA",
+              "ViewState": "AQIAAB8AAAAAAAAAAAAkwDgAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-06-03T16:26:34.311Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "Salaried.cs",
               "DocumentMoniker": "C:\\Users\\rodri\\OneDrive\\Documents\\GitHub\\SAIT\\objectOrientedProgramming2\\lab2_inheritance\\SAIT_lab2_inheritance\\Salaried.cs",
               "RelativeDocumentMoniker": "Salaried.cs",
               "ToolTip": "C:\\Users\\rodri\\OneDrive\\Documents\\GitHub\\SAIT\\objectOrientedProgramming2\\lab2_inheritance\\SAIT_lab2_inheritance\\Salaried.cs",
               "RelativeToolTip": "Salaried.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAACEAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABoAAAAnAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-06-03T15:10:28.57Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "Wages.cs",
               "DocumentMoniker": "C:\\Users\\rodri\\OneDrive\\Documents\\GitHub\\SAIT\\objectOrientedProgramming2\\lab2_inheritance\\SAIT_lab2_inheritance\\Wages.cs",
               "RelativeDocumentMoniker": "Wages.cs",
               "ToolTip": "C:\\Users\\rodri\\OneDrive\\Documents\\GitHub\\SAIT\\objectOrientedProgramming2\\lab2_inheritance\\SAIT_lab2_inheritance\\Wages.cs",
               "RelativeToolTip": "Wages.cs",
-              "ViewState": "AQIAABQAAAAAAAAAAAAgwBYAAABuAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAC8AAAAXAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-06-03T15:14:50.465Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 5,
               "Title": "PartTime.cs",
               "DocumentMoniker": "C:\\Users\\rodri\\OneDrive\\Documents\\GitHub\\SAIT\\objectOrientedProgramming2\\lab2_inheritance\\SAIT_lab2_inheritance\\PartTime.cs",
               "RelativeDocumentMoniker": "PartTime.cs",
               "ToolTip": "C:\\Users\\rodri\\OneDrive\\Documents\\GitHub\\SAIT\\objectOrientedProgramming2\\lab2_inheritance\\SAIT_lab2_inheritance\\PartTime.cs",
               "RelativeToolTip": "PartTime.cs",
-              "ViewState": "AQIAAAYAAAAAAAAAAAAAAB8AAAAAAAAA",
+              "ViewState": "AQIAAAsAAAAAAAAAAAAAwCEAAAAYAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-03T15:14:40.289Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-03T15:14:40.289Z"
             }
           ]
         }

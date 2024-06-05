@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Configuration;
+using System.IO;
 using System.Linq;
 using System.Net.Sockets;
 using System.Runtime.CompilerServices;
@@ -10,9 +11,10 @@ using static SAIT_lab2_inheritance.EmployeeCategory;
 
 namespace SAIT_lab2_inheritance
 {
-    internal class Employee // children: Salaried, PartTime, Wages
 
+    internal class Employee // children: Salaried, PartTime, Wages
     {
+
         private string _id;
         public string Id { get { return _id; } set { _id = value; } }
         
@@ -40,8 +42,11 @@ namespace SAIT_lab2_inheritance
         private EmployeeContractCategory _contractCategory;
         public EmployeeContractCategory ContractCategory { get { return _contractCategory; } set { _contractCategory = value; } }
 
-        static private List<Employee> employeeList = new List<Employee>();
 
+        // CONSTRUCTORS
+
+
+        // Vanilla Employee constructor
         public Employee (string id, string name, string address, string phone, long sin, string dob, string dept)
         {
             Id = id.Trim();
@@ -71,7 +76,7 @@ namespace SAIT_lab2_inheritance
             {
                 Employee employee = new Salaried(id, name, address, phone, sin, dob, dept, weeklySalary);
                 Salaried salariedEmployee = (Salaried)employee;
-                employeeList.Add(salariedEmployee);
+                //employeeList.Add(salariedEmployee);
             }
             else
             // The only Contract Category class that takes 7 parameters is Salaried, so
@@ -99,13 +104,13 @@ namespace SAIT_lab2_inheritance
             {
                 Employee employee = new Wages(id, name, address, phone, sin, dob, dept, rate, hours);
                 Wages salariedEmployee = (Wages)employee;
-                employeeList.Add(salariedEmployee);
+                //employeeList.Add(salariedEmployee);
             }
             else if (ContractCategory == EmployeeContractCategory.PartTime)
             {
                 Employee employee = new PartTime(id, name, address, phone, sin, dob, dept, rate, hours);
                 PartTime salariedEmployee = (PartTime)employee;
-                employeeList.Add(salariedEmployee);
+                //employeeList.Add(salariedEmployee);
             }
             else
             {
@@ -113,9 +118,18 @@ namespace SAIT_lab2_inheritance
             }
         }
 
+
+        // METHODS
+
+
         public override string ToString()
         {
-            return ;
+            return "abc";
         }
+        public virtual double getPay()
+        {
+            return 0D;
+        }
+
     }
 }

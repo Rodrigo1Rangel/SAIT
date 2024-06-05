@@ -53,37 +53,6 @@ namespace SAIT_lab2_inheritance
             {
                 ContractCategory = EmployeeContractCategory.PartTime;
             }
-            
-
-
-            /* Inefficient:
-            
-            //  Salaried employees have ID numbers starting with 0–4
-            foreach (string i in SalariedInitial)
-            {
-                if (id.StartsWith(i))
-                {
-                    ContractCategory = EmployeeContractCategory.Salaried;
-                }
-            }
-
-            //  Wage employees have ID numbers starting with 5-7
-            foreach (string i in WagesInitial)
-            {
-                if (id.StartsWith(i))
-                {
-                    ContractCategory = EmployeeContractCategory.Wages;
-                }
-            }
-
-            // PartTime employees have ID numbers starting with 8-9
-            foreach (string i in PartTimeInitial)
-            {
-                if (id.StartsWith(i))
-                {
-                    ContractCategory = EmployeeContractCategory.PartTime;
-                }
-            */
         }
 
         public EmployeeContractCategory getEmployeeContractCategory()

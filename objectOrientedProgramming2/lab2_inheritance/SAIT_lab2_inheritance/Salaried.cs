@@ -24,7 +24,7 @@ namespace SAIT_lab2_inheritance
             // Calculate payment
             WeeklyPayment = weeklySalary;
         }
-        public double getPay()
+        public override double getPay()
         {
             return this.WeeklyPayment;
         }
