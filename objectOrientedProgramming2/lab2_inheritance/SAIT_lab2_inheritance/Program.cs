@@ -14,30 +14,26 @@ namespace SAIT_lab2_inheritance
 {
     internal class Program
     {
+        // -------------------------- FIELDS --------------------------
+
         static private EmployeeContractCategory _contractCategory;
-        static public EmployeeContractCategory ContractCategory { get { return _contractCategory; } set { _contractCategory = value; } }
-
         static private List<Employee> _employeeList = new List<Employee>();
-        static public List<Employee> EmployeeList { get { return _employeeList; } set { _employeeList = value; } }
-
         static private List<Employee> _highestPayingEmployeeList = new List<Employee>();
-        static public List<Employee> HighestPayingEmployeeList { get { return _highestPayingEmployeeList; } set { _highestPayingEmployeeList = value; } }
-
         static private List<Employee> _lowestPayingEmployeeList = new List<Employee>();
-        static public List<Employee> LowestPayingEmployeeList { get { return _lowestPayingEmployeeList; } set { _lowestPayingEmployeeList = value; } }
-
         static private int _quantityEmployeeSalaried = 0;
-        static public int QuantityEmployeeSalaried { get { return _quantityEmployeeSalaried; } set { _quantityEmployeeSalaried = value; } }
-
         static private int _quantityEmployeeWages = 0;
-        static public int QuantityEmployeeWages { get { return _quantityEmployeeWages; } set { _quantityEmployeeWages = value; } }
-
         static private int _quantityEmployeePartTime = 0;
-        static public int QuantityEmployeePartTime { get { return _quantityEmployeePartTime; } set { _quantityEmployeePartTime = value; } }
-
         static private int _quantityEmployee = 0;
-        static public int QuantityEmployee { get { return _quantityEmployee; } set { _quantityEmployee = value; } }
 
+        // -------------------------- PROPERTIES --------------------------
+        static public EmployeeContractCategory ContractCategory { get { return _contractCategory; } set { _contractCategory = value; } }
+        static public List<Employee> EmployeeList { get { return _employeeList; } set { _employeeList = value; } }
+        static public List<Employee> HighestPayingEmployeeList { get { return _highestPayingEmployeeList; } set { _highestPayingEmployeeList = value; } }
+        static public List<Employee> LowestPayingEmployeeList { get { return _lowestPayingEmployeeList; } set { _lowestPayingEmployeeList = value; } }
+        static public int QuantityEmployeeSalaried { get { return _quantityEmployeeSalaried; } set { _quantityEmployeeSalaried = value; } }
+        static public int QuantityEmployeeWages { get { return _quantityEmployeeWages; } set { _quantityEmployeeWages = value; } }
+        static public int QuantityEmployeePartTime { get { return _quantityEmployeePartTime; } set { _quantityEmployeePartTime = value; } }
+        static public int QuantityEmployee { get { return _quantityEmployee; } set { _quantityEmployee = value; } }
 
         static void Main(string[] args)
         {

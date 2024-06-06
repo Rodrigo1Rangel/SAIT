@@ -8,16 +8,17 @@ namespace SAIT_lab2_inheritance
 {
     internal class Wages : Employee
     {
+        // --------------------------- FIELDS ---------------------------
+
         private double _rate;
-        public double Rate { get { return _rate; } set { _rate = value; } }
-
         private double _hours;
-        public double Hours { get { return _hours; } set { _hours = value; } }
-
         private float _overtimePaymentRate;
-        public float OvertimePaymentRate { get { return _overtimePaymentRate; } set { _overtimePaymentRate = value; } }
-
         private float _overtimeHourThreshold; 
+
+        // ------------------------- PROPERTIES -------------------------
+        public double Rate { get { return _rate; } set { _rate = value; } }
+        public double Hours { get { return _hours; } set { _hours = value; } }
+        public float OvertimePaymentRate { get { return _overtimePaymentRate; } set { _overtimePaymentRate = value; } }
         public float OvertimeHourThreshold { get { return _overtimeHourThreshold; } set { _overtimeHourThreshold = value; } }
 
         // ------------------------ CONSTRUCTORS ------------------------

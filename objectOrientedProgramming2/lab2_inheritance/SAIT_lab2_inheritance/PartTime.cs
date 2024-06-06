@@ -9,10 +9,13 @@ namespace SAIT_lab2_inheritance
 {
     internal class PartTime : Employee
     {
-        private double _rate;
-        public double Rate { get { return _rate; } set { _rate = value; } }
+        // --------------------------- FIELDS ---------------------------
 
+        private double _rate;
         private double _hours;
+
+        // ------------------------- PROPERTIES -------------------------
+        public double Rate { get { return _rate; } set { _rate = value; } }
         public double Hours { get { return _hours; } set { _hours = value; } }
 
         // ------------------------ CONSTRUCTORS ------------------------
