@@ -77,6 +77,17 @@ namespace SAIT_lab2_inheritance
             // Is "res" a pre-requisite to have "Resources" as the parent directory after we have added the resource file to Visual Studio?
             // C: \Users\rodri\OneDrive\Documents\GitHub\SAIT\objectOrientedProgramming2\lab2_inheritance\SAIT_lab2_inheritance\Resources\employees.txt
             string[] datasetPerLine = Resources.employees.Split('\n');
+            /* We could also have done without storing each line in a variable:
+             
+               foreach (string datasetPerLine in Resources.employees.Split('\n')
+               {
+                    foreach (string lineItem in datasetPerLine)
+                    {
+                    
+                    }
+               }
+            */
+
             foreach (string lineItem in datasetPerLine)
             {
                 double weeklySalary;

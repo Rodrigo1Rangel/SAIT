@@ -12,17 +12,17 @@ namespace SAIT_lab2_inheritance
 
         private double _rate;
         private double _hours;
-        private float _overtimePaymentRate;
-        private float _overtimeHourThreshold; 
+        private float _OVERTIMEPAYMENTRATE = 1.5F;
+        private float _OVERTIMEHOURTHRESHOLD = 40; 
 
         // ------------------------- PROPERTIES -------------------------
         public double Rate { get { return _rate; } set { _rate = value; } }
         public double Hours { get { return _hours; } set { _hours = value; } }
-        public float OvertimePaymentRate { get { return _overtimePaymentRate; } set { _overtimePaymentRate = value; } }
-        public float OvertimeHourThreshold { get { return _overtimeHourThreshold; } set { _overtimeHourThreshold = value; } }
+        public float OVERTIMEPAYMENTRATE { get { return _OVERTIMEPAYMENTRATE; } set { _OVERTIMEPAYMENTRATE = value; } }
+        public float OVERTIMEHOURTHRESHOLD { get { return _OVERTIMEHOURTHRESHOLD; } set { _OVERTIMEHOURTHRESHOLD = value; } }
 
         // ------------------------ CONSTRUCTORS ------------------------
-        public Wages(string id, string name, string address, string phone, long sin, string dob, string dept, double rate, double hours) : base(id, name, address, phone, sin, dob, dept, rate, hours)
+        public Wages(string id, string name, string address, string phone, long sin, string dob, string dept, double rate, double hours) : base(id, name, address, phone, sin, dob, dept)
         {
             Rate = rate;
             Hours = hours;
@@ -36,11 +36,9 @@ namespace SAIT_lab2_inheritance
         public override double GetPay()
         {
             // Calculate payment
-            OvertimePaymentRate = 1.5F;
-            OvertimeHourThreshold = 40;
-            if (Hours > OvertimeHourThreshold)
+            if (Hours > OVERTIMEHOURTHRESHOLD)
             {
-                WeeklySalary = Rate * OvertimeHourThreshold + (Hours - OvertimeHourThreshold) * Rate * OvertimePaymentRate;
+                WeeklySalary = Rate * OVERTIMEHOURTHRESHOLD + (Hours - OVERTIMEHOURTHRESHOLD) * Rate * OVERTIMEPAYMENTRATE;
             }
             else
             {

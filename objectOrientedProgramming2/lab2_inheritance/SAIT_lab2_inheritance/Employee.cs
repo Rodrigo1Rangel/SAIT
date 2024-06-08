@@ -12,7 +12,7 @@ using static SAIT_lab2_inheritance.EmployeeCategory;
 namespace SAIT_lab2_inheritance
 {
 
-    internal abstract class Employee // children: Salaried, PartTime, Wages
+    internal abstract class Employee // Parent of: Salaried, PartTime, Wages
     {
         // -------------------------- FIELDS --------------------------
 
@@ -37,7 +37,6 @@ namespace SAIT_lab2_inheritance
 
         // ------------------------ CONSTRUCTORS ------------------------
 
-        /* Vanilla Employee constructor
         public Employee (string id, string name, string address, string phone, long sin, string dob, string dept)
         {
             Id = id;
@@ -48,33 +47,7 @@ namespace SAIT_lab2_inheritance
             Dob = dob;
             Dept = dept;
         }
-        */
-
-        // Salaried contract constructor
-        public Employee(string id, string name, string address, string phone, long sin, string dob, string dept, double weeklySalary)
-        {
-            Id = id;
-            Name = name;
-            Address = address;
-            Phone = phone;
-            Sin = sin;
-            Dob = dob;
-            Dept = dept;
-        }
-
-        // Wages or PartTime contract constructor
-        public Employee(string id, string name, string address, string phone, long sin, string dob, string dept, double rate, double hours)
-        {
-            Id = id;
-            Name = name;
-            Address = address;
-            Phone = phone;
-            Sin = sin;
-            Dob = dob;
-            Dept = dept;
-        }
-
-
+        
         // -------------------------- METHODS --------------------------
 
         public abstract override string ToString();

@@ -19,7 +19,7 @@ namespace SAIT_lab2_inheritance
         public double Hours { get { return _hours; } set { _hours = value; } }
 
         // ------------------------ CONSTRUCTORS ------------------------
-        public PartTime(string id, string name, string address, string phone, long sin, string dob, string dept, double rate, double hours) : base(id, name, address, phone, sin, dob, dept, rate, hours)
+        public PartTime(string id, string name, string address, string phone, long sin, string dob, string dept, double rate, double hours) : base(id, name, address, phone, sin, dob, dept)
         {
             Rate = rate;
             Hours = hours;

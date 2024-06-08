@@ -11,7 +11,7 @@ namespace SAIT_lab2_inheritance
     {
 
         // ------------------------ CONSTRUCTORS ------------------------
-        public Salaried(string id, string name, string address, string phone, long sin, string dob, string dept, double weeklySalary) : base(id, name, address, phone, sin, dob, dept, weeklySalary)
+        public Salaried(string id, string name, string address, string phone, long sin, string dob, string dept, double weeklySalary) : base(id, name, address, phone, sin, dob, dept)
         {
             WeeklySalary = weeklySalary;
         }
