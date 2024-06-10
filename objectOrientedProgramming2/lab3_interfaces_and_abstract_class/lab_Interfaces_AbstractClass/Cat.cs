@@ -6,10 +6,16 @@ using System.Threading.Tasks;
 
 namespace lab_Interfaces_AbstractClass
 {
-    internal interface IAnimal
+    internal class Cat : Animal
     {
         // ------------------------- METHODS --------------------------
-        void Eat();
-        void Cry();
+        public override void Eat()
+        {
+            Console.WriteLine("Cats eat mice.");
+        }
+        public override void Cry()
+        {
+            Console.WriteLine("Meow!");
+        }
     }
 }

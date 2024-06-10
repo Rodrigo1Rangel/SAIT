@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace lab_Interfaces_AbstractClass
 {
-    internal abstract class Animal
+    internal abstract class Animal : IAnimal
     {
         // -------------------------- FIELDS --------------------------
         private string _name;
@@ -20,5 +20,6 @@ namespace lab_Interfaces_AbstractClass
 
         // ------------------------- METHODS --------------------------
         public abstract void Eat();
+        public abstract void Cry();
     }
 }
