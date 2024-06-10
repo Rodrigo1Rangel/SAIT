@@ -8,5 +8,10 @@ namespace lab_Interfaces_AbstractClass
 {
     internal interface IAnimal
     {
+        // -------------------------- FIELDS --------------------------
+
+        // ------------------------ PROPERTIES ------------------------
+
+        // ------------------------- METHODS --------------------------
     }
 }
