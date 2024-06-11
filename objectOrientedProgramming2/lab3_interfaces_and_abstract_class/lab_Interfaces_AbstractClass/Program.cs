@@ -34,6 +34,7 @@ namespace lab_Interfaces_AbstractClass
             myDog.Age = 2;
 
             Console.WriteLine($"\n My {myDog.Colour} dog {myDog.Name} is {myDog.Age} years old.");
+            myDog.Eat();
 
             // CAT
             Cat myCat = new Cat();
@@ -42,7 +43,7 @@ namespace lab_Interfaces_AbstractClass
             myCat.Age = 3;
 
             Console.WriteLine($"\n My {myDog.Colour} cat {myCat.Name} is {myCat.Age} years old.");
-
+            myCat.Eat();
 
 
             // --------------------------- LAB PART 2 ---------------------------
@@ -59,23 +60,29 @@ namespace lab_Interfaces_AbstractClass
                 {
                     case "1":
                         Console.Write($"\nChose an available Animal specie to register: ");
-                        Console.Write(specieEnumList.TrimEnd(',', ' ') + "\n > ");
+                        Console.Write(specieEnumList.TrimEnd(',', ' ') + ".\n > ");
                         string specieUserSelection = Console.ReadLine().ToLower();
                         AnimalSpecie animalSpecieSelection;
+                        while (!Enum.TryParse(specieUserSelection, out animalSpecieSelection))
+                        // Whenever the TryParse attempt is not successful (bool false), then enter the loop.
+                        {
+                            Console.Write($"\n There is no such specie available in the system.\n Please enter a valid animal spiece to register: ");
+                            Console.Write(specieEnumList.TrimEnd(',', ' ') + ".\n > ");
+                            specieUserSelection = Console.ReadLine().ToLower();
+                        }
                         Enum.TryParse(specieUserSelection, out animalSpecieSelection);
                         IniciateAnimal(animalSpecieSelection);
                         break;
+
                     case "2":
                         ReadListAnimalName();
                         break;
+                    
                     default:
                         Console.WriteLine("\n Please, enter a valid option.");
-                        // TO FIX: any string with a letter defaults to the first enum AnimalSpecie
                         break;
-
                 }
             } while (menuUserSelection != "0") ;
-
         }
 
         // ------------------------- METHODS --------------------------
@@ -94,7 +101,7 @@ namespace lab_Interfaces_AbstractClass
                 ListRegisteredAnimals.Add(RegisterAnimal(newAnimal));
             }
             else if (animalCategory != AnimalSpecie.cat && animalCategory != AnimalSpecie.dog)
-                Console.WriteLine("There is no such specie available in the system.");
+                Console.WriteLine("Invalid selection. You will be redirected to the initial menu.");
         }
 
         public static Animal RegisterAnimal(Animal newAnimal)

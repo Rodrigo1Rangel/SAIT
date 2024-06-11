@@ -13,11 +13,11 @@ namespace lab_Interfaces_AbstractClass
         // ------------------------- METHODS --------------------------
         public override void Eat()
         {
-            Console.WriteLine("Dogs eat meat.");
+            Console.WriteLine(" Dogs eat meat.");
         }
         public override void Cry()
         {
-            Console.WriteLine("Woof!");
+            Console.WriteLine(" Woof!");
         }
     }
 }
