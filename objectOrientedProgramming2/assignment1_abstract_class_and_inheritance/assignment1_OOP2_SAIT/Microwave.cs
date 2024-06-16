@@ -6,11 +6,7 @@ using System.Threading.Tasks;
 
 namespace assignment1_OOP2_SAIT
 {
-    internal class Program
+    internal class Microwave : Appliance
     {
-        private static void Main(string[] args)
-        {
-
-        }
     }
 }

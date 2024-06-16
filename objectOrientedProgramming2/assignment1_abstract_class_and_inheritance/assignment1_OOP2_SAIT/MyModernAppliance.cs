@@ -6,11 +6,7 @@ using System.Threading.Tasks;
 
 namespace assignment1_OOP2_SAIT
 {
-    internal class Program
+    internal class MyModernAppliance : ModernAppliances
     {
-        private static void Main(string[] args)
-        {
-
-        }
     }
 }

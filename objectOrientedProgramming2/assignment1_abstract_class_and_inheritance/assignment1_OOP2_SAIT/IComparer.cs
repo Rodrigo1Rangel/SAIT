@@ -6,11 +6,7 @@ using System.Threading.Tasks;
 
 namespace assignment1_OOP2_SAIT
 {
-    internal class Program
+    internal interface IComparer
     {
-        private static void Main(string[] args)
-        {
-
-        }
     }
 }
