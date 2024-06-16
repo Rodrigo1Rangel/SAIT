@@ -8,5 +8,13 @@ namespace assignment1_OOP2_SAIT
 {
     internal class RandomComparer : IComparer
     {
+        // ====================== INSTANCE FIELDS ====================== 
+
+        // ======================== PROPERTIES ========================= 
+
+        // ======================== CONSTRUCTORS ======================= 
+
+        // ========================== METHODS ========================== 
+
     }
 }
