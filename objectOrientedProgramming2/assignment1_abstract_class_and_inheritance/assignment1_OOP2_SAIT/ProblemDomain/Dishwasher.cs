@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -32,7 +33,7 @@ namespace assignment1_OOP2_SAIT
         }
         public override string ToString()
         {
-            return "a";
+            return $"ItemNumber: {ItemNumber}\nBrand: {Brand}\nQuantity: {Quantity}\nWattage: {Wattage}\nColor: {Color}\nPrice: {Price}\nFeature: {Feature}\nSound Rating: {SoundRating}\n";
         }
     }
 }

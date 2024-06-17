@@ -20,7 +20,7 @@ namespace assignment1_OOP2_SAIT
 
         // ======================== CONSTRUCTORS ======================= 
 
-        public Vacuum(int itemNumber, string brand, int quantity, short wattage, string color, float price, float grade, byte batteryVoltage) : base(itemNumber, brand, quantity, wattage, color, price)
+        public Vacuum(int itemNumber, string brand, int quantity, short wattage, string color, float price, string grade, byte batteryVoltage) : base(itemNumber, brand, quantity, wattage, color, price)
         {
         }
 
@@ -31,7 +31,7 @@ namespace assignment1_OOP2_SAIT
         }
         public override string ToString()
         {
-            return "a";
+            return $"ItemNumber: {ItemNumber}\nBrand: {Brand}\nQuantity: {Quantity}\nWattage: {Wattage}\nColor: {Color}\nPrice: {Price}\nGrade: {Grade}\nBatteryVoltage: {BatteryVoltage}\n";
         }
     }
 }
