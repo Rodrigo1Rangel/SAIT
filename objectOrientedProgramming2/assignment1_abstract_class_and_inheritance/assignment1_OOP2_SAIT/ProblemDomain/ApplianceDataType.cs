@@ -10,10 +10,10 @@ namespace assignment1_OOP2_SAIT.ProblemDomain
     {
         public enum ApplianceType
         {
-            Dishwasher,
-            Microwave,
             Refrigerator,
-            Vacuum
+            Vacuum,
+            Microwave,
+            Dishwasher,         
         }
 
         // ====================== INSTANCE FIELDS ====================== 

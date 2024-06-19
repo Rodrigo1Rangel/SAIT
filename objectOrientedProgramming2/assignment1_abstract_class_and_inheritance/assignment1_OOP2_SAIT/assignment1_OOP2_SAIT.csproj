@@ -46,10 +46,7 @@
     <Compile Include="ProblemDomain\Appliance.cs" />
     <Compile Include="ProblemDomain\ApplianceDataType.cs" />
     <Compile Include="ProblemDomain\Dishwasher.cs" />
-    <Compile Include="IComparer.cs" />
     <Compile Include="ProblemDomain\Microwave.cs" />
-    <Compile Include="ModernAppliances.cs" />
-    <Compile Include="MyModernAppliance.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
@@ -57,7 +54,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Compile Include="RandomComparer.cs" />
     <Compile Include="ProblemDomain\Refrigerator.cs" />
     <Compile Include="ProblemDomain\Vacuum.cs" />
   </ItemGroup>
