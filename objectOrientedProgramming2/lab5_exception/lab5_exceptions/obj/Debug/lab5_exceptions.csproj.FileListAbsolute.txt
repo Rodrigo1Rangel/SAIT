@@ -1,0 +1,7 @@
+C:\Users\rodri\OneDrive\Documents\GitHub\SAIT\objectOrientedProgramming2\lab5_exception\lab5_exceptions\bin\Debug\lab5_exceptions.exe.config
+C:\Users\rodri\OneDrive\Documents\GitHub\SAIT\objectOrientedProgramming2\lab5_exception\lab5_exceptions\bin\Debug\lab5_exceptions.exe
+C:\Users\rodri\OneDrive\Documents\GitHub\SAIT\objectOrientedProgramming2\lab5_exception\lab5_exceptions\bin\Debug\lab5_exceptions.pdb
+C:\Users\rodri\OneDrive\Documents\GitHub\SAIT\objectOrientedProgramming2\lab5_exception\lab5_exceptions\obj\Debug\lab5_exceptions.csproj.AssemblyReference.cache
+C:\Users\rodri\OneDrive\Documents\GitHub\SAIT\objectOrientedProgramming2\lab5_exception\lab5_exceptions\obj\Debug\lab5_exceptions.csproj.CoreCompileInputs.cache
+C:\Users\rodri\OneDrive\Documents\GitHub\SAIT\objectOrientedProgramming2\lab5_exception\lab5_exceptions\obj\Debug\lab5_exceptions.exe
+C:\Users\rodri\OneDrive\Documents\GitHub\SAIT\objectOrientedProgramming2\lab5_exception\lab5_exceptions\obj\Debug\lab5_exceptions.pdb
