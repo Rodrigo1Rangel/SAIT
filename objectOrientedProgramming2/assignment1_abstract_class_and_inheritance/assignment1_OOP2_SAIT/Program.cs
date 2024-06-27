@@ -15,6 +15,15 @@ using System.Threading;
 
 namespace assignment1_OOP2_SAIT
 {
+    //
+    // Summary:
+    //     The program consists of a system to manage appliance data from a company. Currently these data
+    // are stored in a text file and contains four types of appliances: refrigerators, vacuums, microwaves
+    // and dishwashers. Each appliance is uniquely identified using an item number, and information about
+    // each type of appliance has its own descriptive information.
+    //
+    // The system allows customers to find, list and purchase appliances. 
+
     internal class Program
     {
         // ====================== INSTANCE FIELDS ====================== 
@@ -26,7 +35,12 @@ namespace assignment1_OOP2_SAIT
 
         private static void Main(string[] args)
         {
-            // To make sure that the decimals from the file are interpreted with dot separators
+            //
+            // Summary:
+            //     Controls the program's operation flow. It first loads the data from the appliance.txt
+            //     resource file, then displays the menu to the user who is a customer.
+
+            // To make sure that the decimals from the file are interpreted with dot separators.
             CultureInfo culture = new CultureInfo("en-US");
             CultureInfo.DefaultThreadCurrentCulture = culture;
             CultureInfo.DefaultThreadCurrentUICulture = culture;
@@ -39,24 +53,38 @@ namespace assignment1_OOP2_SAIT
         public static List<Appliance> LoadData()
         // Parse the appliances.txt file into a single list
         {
+            //
+            // Summary:
+            //     Creates or opens a file for writing UTF-8 encoded text. If the file already exists,
+            //     its contents are overwritten.
+            //
+            // Returns:
+            //     A list of appliance objects.
+            
+
             string[] datasetPerLine = Resources.appliances.Split('\r');
 
             foreach (string line in datasetPerLine)
             {
+                //Skip empty lines from within the Resources.appliance text file.
+                if (line == "\n")
+                    continue;
 
                 char delimiter = ';';
                 string[] applianceItems = line.TrimEnd(delimiter).TrimStart('\n').Split(delimiter);
 
-
+                // Converts and assigns each string from the Resources.appliance text file to its respective
+                // variable related to the Appliance class.
                 int.TryParse(applianceItems[0].Trim(), out int itemNumber);
                 int.TryParse(applianceItems[2].Trim(), out int quantity);
                 short.TryParse(applianceItems[3].Trim(), out short wattage);
                 float.TryParse(applianceItems[5].Trim(), out float price);
 
+                // Evaluates the type of appliance based on itemNumber.
                 ApplianceDataType thisApplianceType = new ApplianceDataType(applianceItems[0]);
                 thisApplianceType.Type = thisApplianceType.getApplianceType();
 
-                // Refrigerator check and creation
+                // Refrigerator check and creation.
                 if (applianceItems.Length == 9 && thisApplianceType.Type == ApplianceType.Refrigerator)
                 {
                     byte.TryParse(applianceItems[6].Trim(), out byte doors);
@@ -65,26 +93,26 @@ namespace assignment1_OOP2_SAIT
                     Refrigerator refrigeratorItem = new Refrigerator(itemNumber, applianceItems[1].Trim(), quantity, wattage, applianceItems[4].Trim(), price, doors, height, width);
                     ApplianceList.Add(refrigeratorItem);
                 }
-                // Vacuum check and creation
+                // Vacuum check and creation.
                 else if (applianceItems.Length == 8 && thisApplianceType.Type == ApplianceType.Vacuum)
                 {
                     Vacuum vacuumItem = new Vacuum(itemNumber, applianceItems[1].Trim(), quantity, wattage, applianceItems[4].Trim(), price, applianceItems[6].Trim(), applianceItems[7].Trim());
                     ApplianceList.Add(vacuumItem);
                 }
-                // Microwave check and creation
+                // Microwave check and creation.
                 else if (applianceItems.Length == 8 && thisApplianceType.Type == ApplianceType.Microwave)
                 {
                     float.TryParse(applianceItems[6].Trim(), out float capacity);
                     Microwave microwaveItem = new Microwave(itemNumber, applianceItems[1].Trim(), quantity, wattage, applianceItems[4].Trim(), price, capacity, applianceItems[7].Trim());
                     ApplianceList.Add(microwaveItem);
                 }
-                // Dishwasher check and creation
+                // Dishwasher check and creation.
                 else if (applianceItems.Length == 8 && thisApplianceType.Type == ApplianceType.Dishwasher)
                 {
                     Dishwasher dishwasherItem = new Dishwasher(itemNumber, applianceItems[1].Trim(), quantity, wattage, applianceItems[4].Trim(), price, applianceItems[6].Trim(), applianceItems[7].Trim());
                     ApplianceList.Add(dishwasherItem);
                 }
-                // ArgumentException when the quantity of paremeters is above or below the expected
+                // Raises an ArgumentException when the quantity of paremeters is above or below the expected.
                 else if (applianceItems.Length < 6)
                 {
                     throw new ArgumentException("Applience data is insufficient to register an appliance item in the system.", "Appliance data input.");
@@ -99,11 +127,17 @@ namespace assignment1_OOP2_SAIT
 
         public static void Save()
         {
-            //Create empty array with the size of the quantity of the appliance items
+            //
+            // Summary:
+            //     Overwrites the Resources.appliance text file with the output string from
+            //     each appliance's FormatForFile() method.
+            //
+            
+            // Creates empty array with the size of the quantity of the appliance items
             string[] textToFileLines = new string[ApplianceList.Count];
             for (int i = 0; i < ApplianceList.Count; i++)
             {
-                //Point the array's memory allocation to each item of the ApplianceList
+                // Point the array's memory allocation to each item of the ApplianceList
                 textToFileLines[i] = ApplianceList[i].FormatForFile();
             }
             File.WriteAllLines(Environment.CurrentDirectory + "\\..\\..\\Resources\\appliances.txt", textToFileLines);
@@ -111,6 +145,16 @@ namespace assignment1_OOP2_SAIT
 
         public static void Menu()
         {
+            //
+            // Summary:
+            //     Displays a list of possible customer actions and prompts the user for a 
+            //     selection limited to the presented options.
+            //
+            //     The user may check an appliance description by searching for its brand or type.
+            //     It is also possible to generate a random list of unique appliances, as long as
+            //     the desired quantity of random items is less than the available quantity
+            //     of appliances. The user may check out an appliance if its item number is known.
+            //     To confirm this last operation, the user may save and exit the system.
 
             string menuUserSelection;
             do
