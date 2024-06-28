@@ -366,7 +366,7 @@ namespace assignment1_OOP2_SAIT
                         Random randomNumberOfAppliances = new Random();
                         for (int i = 0; i < randomApplianceQuantityValue; i++)
                         {
-                            int randomValue = randomNumberOfAppliances.Next(ApplianceList.Count + 1);
+                            int randomValue = randomNumberOfAppliances.Next(ApplianceList.Count);
                             Console.WriteLine(ApplianceList[randomValue].ToString());
                         }
                         break;
