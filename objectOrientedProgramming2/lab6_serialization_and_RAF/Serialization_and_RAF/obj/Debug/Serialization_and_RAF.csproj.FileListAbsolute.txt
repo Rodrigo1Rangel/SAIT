@@ -1,0 +1,7 @@
+C:\Users\rodri\OneDrive\Documents\GitHub\SAIT\objectOrientedProgramming2\lab6_serialization_and_RAF\Serialization_and_RAF\bin\Debug\Serialization_and_RAF.exe.config
+C:\Users\rodri\OneDrive\Documents\GitHub\SAIT\objectOrientedProgramming2\lab6_serialization_and_RAF\Serialization_and_RAF\bin\Debug\Serialization_and_RAF.exe
+C:\Users\rodri\OneDrive\Documents\GitHub\SAIT\objectOrientedProgramming2\lab6_serialization_and_RAF\Serialization_and_RAF\bin\Debug\Serialization_and_RAF.pdb
+C:\Users\rodri\OneDrive\Documents\GitHub\SAIT\objectOrientedProgramming2\lab6_serialization_and_RAF\Serialization_and_RAF\obj\Debug\Serialization_and_RAF.csproj.AssemblyReference.cache
+C:\Users\rodri\OneDrive\Documents\GitHub\SAIT\objectOrientedProgramming2\lab6_serialization_and_RAF\Serialization_and_RAF\obj\Debug\Serialization_and_RAF.csproj.CoreCompileInputs.cache
+C:\Users\rodri\OneDrive\Documents\GitHub\SAIT\objectOrientedProgramming2\lab6_serialization_and_RAF\Serialization_and_RAF\obj\Debug\Serialization_and_RAF.exe
+C:\Users\rodri\OneDrive\Documents\GitHub\SAIT\objectOrientedProgramming2\lab6_serialization_and_RAF\Serialization_and_RAF\obj\Debug\Serialization_and_RAF.pdb
