@@ -39,6 +39,5 @@ namespace lab5_exceptions
                 Console.WriteLine(e);
             }
         }
-
     }
 }

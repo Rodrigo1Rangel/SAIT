@@ -3,12 +3,12 @@
   "WorkspaceRootPath": "C:\\Users\\rodri\\OneDrive\\Documents\\GitHub\\SAIT\\objectOrientedProgramming2\\lab6_serialization_and_RAF\\Serialization_and_RAF\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{E15EABEB-E6F7-498C-BB3D-A872339B850E}|Serialization_and_RAF.csproj|c:\\users\\rodri\\onedrive\\documents\\github\\sait\\objectorientedprogramming2\\lab6_serialization_and_raf\\serialization_and_raf\\event.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E15EABEB-E6F7-498C-BB3D-A872339B850E}|Serialization_and_RAF.csproj|solutionrelative:event.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{E15EABEB-E6F7-498C-BB3D-A872339B850E}|Serialization_and_RAF.csproj|c:\\users\\rodri\\onedrive\\documents\\github\\sait\\objectorientedprogramming2\\lab6_serialization_and_raf\\serialization_and_raf\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{E15EABEB-E6F7-498C-BB3D-A872339B850E}|Serialization_and_RAF.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E15EABEB-E6F7-498C-BB3D-A872339B850E}|Serialization_and_RAF.csproj|C:\\Users\\rodri\\OneDrive\\Documents\\GitHub\\SAIT\\objectOrientedProgramming2\\lab6_serialization_and_RAF\\Serialization_and_RAF\\event.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E15EABEB-E6F7-498C-BB3D-A872339B850E}|Serialization_and_RAF.csproj|solutionrelative:event.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -18,11 +18,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "Event.cs",
               "DocumentMoniker": "C:\\Users\\rodri\\OneDrive\\Documents\\GitHub\\SAIT\\objectOrientedProgramming2\\lab6_serialization_and_RAF\\Serialization_and_RAF\\Event.cs",
               "RelativeDocumentMoniker": "Event.cs",
@@ -30,18 +30,17 @@
               "RelativeToolTip": "Event.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAABYAAAAmAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-29T18:52:33.558Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-29T18:52:33.558Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\rodri\\OneDrive\\Documents\\GitHub\\SAIT\\objectOrientedProgramming2\\lab6_serialization_and_RAF\\Serialization_and_RAF\\Program.cs",
               "RelativeDocumentMoniker": "Program.cs",
               "ToolTip": "C:\\Users\\rodri\\OneDrive\\Documents\\GitHub\\SAIT\\objectOrientedProgramming2\\lab6_serialization_and_RAF\\Serialization_and_RAF\\Program.cs",
               "RelativeToolTip": "Program.cs",
-              "ViewState": "AQIAAAcAAAAAAAAAAAAAAA4AAAAAAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAEAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-06-29T17:29:08.606Z",
               "EditorCaption": ""

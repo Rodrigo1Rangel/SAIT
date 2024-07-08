@@ -1,0 +1,7 @@
+C:\Users\rodri\OneDrive\Documents\GitHub\SAIT\objectOrientedProgramming2\lab7_testing\lab7_unit_test_program\bin\Debug\lab7_unit_test_program.exe.config
+C:\Users\rodri\OneDrive\Documents\GitHub\SAIT\objectOrientedProgramming2\lab7_testing\lab7_unit_test_program\bin\Debug\lab7_unit_test_program.exe
+C:\Users\rodri\OneDrive\Documents\GitHub\SAIT\objectOrientedProgramming2\lab7_testing\lab7_unit_test_program\bin\Debug\lab7_unit_test_program.pdb
+C:\Users\rodri\OneDrive\Documents\GitHub\SAIT\objectOrientedProgramming2\lab7_testing\lab7_unit_test_program\obj\Debug\lab7_unit_test_program.csproj.AssemblyReference.cache
+C:\Users\rodri\OneDrive\Documents\GitHub\SAIT\objectOrientedProgramming2\lab7_testing\lab7_unit_test_program\obj\Debug\lab7_unit_test_program.csproj.CoreCompileInputs.cache
+C:\Users\rodri\OneDrive\Documents\GitHub\SAIT\objectOrientedProgramming2\lab7_testing\lab7_unit_test_program\obj\Debug\lab7_unit_test_program.exe
+C:\Users\rodri\OneDrive\Documents\GitHub\SAIT\objectOrientedProgramming2\lab7_testing\lab7_unit_test_program\obj\Debug\lab7_unit_test_program.pdb
