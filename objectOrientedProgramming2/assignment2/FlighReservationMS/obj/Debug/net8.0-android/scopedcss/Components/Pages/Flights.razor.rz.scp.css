@@ -1,0 +1,24 @@
+flightFinder[b-b9w9ptvpay] {
+    text-align: center;
+    display: flex;
+    margin-bottom: 50px;
+}
+
+flightFinderInput[b-b9w9ptvpay] {
+    width: 200px;
+    margin-right: 100px;
+}
+
+findFlightsButton[b-b9w9ptvpay] {
+    width: 300px;
+}
+
+reserveButton[b-b9w9ptvpay] {
+    width: 150px;
+    align-content: center;
+}
+
+mainHeader[b-b9w9ptvpay] {
+    align-content: center;
+    margin-top: 50px;
+}

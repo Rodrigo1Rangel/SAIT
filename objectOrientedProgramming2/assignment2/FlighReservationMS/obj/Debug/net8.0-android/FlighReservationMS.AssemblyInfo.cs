@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("FlighReservationMS")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0+bb1b488e40456f56e9feb68945329dbff0050941")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0+ee816c46f5da7736ea41f0971857937919bb5748")]
 [assembly: System.Reflection.AssemblyProductAttribute("FlighReservationMS")]
 [assembly: System.Reflection.AssemblyTitleAttribute("FlighReservationMS")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

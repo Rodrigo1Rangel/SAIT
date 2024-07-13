@@ -511,6 +511,9 @@
     <AppxPackagedFile Include="C:\Users\rodri\OneDrive\Documents\GitHub\SAIT\objectOrientedProgramming2\assignment2\FlighReservationMS\Components\Layout\NavMenu.razor.css">
       <PackagePath>Components\Layout\NavMenu.razor.css</PackagePath>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\rodri\OneDrive\Documents\GitHub\SAIT\objectOrientedProgramming2\assignment2\FlighReservationMS\Components\Pages\Flights.razor.css">
+      <PackagePath>Components\Pages\Flights.razor.css</PackagePath>
+    </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>
     <ResolvedSDKReference Include="C:\Users\rodri\.nuget\packages\microsoft.windowsappsdk\1.5.240311000\buildTransitive\..\tools\MSIX\win10-x86\Microsoft.WindowsAppRuntime.1.5.msix">
