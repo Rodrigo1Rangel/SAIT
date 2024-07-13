@@ -10,6 +10,7 @@ namespace lab7_unit_test
     {
         static void Main(string[] args)
         {
+            Console.WriteLine(BasicMath.Devide(10,0));
         }
     }
 }

@@ -27,8 +27,7 @@ namespace lab7_unit_test
             double num1,
             double num2)
         {
-            double result = num1 / num2;
-            return result;
+            return num1 / num2;
         }
         public static double Multiply(
             double num1,
