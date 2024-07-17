@@ -1,0 +1,191 @@
+﻿@page "/flights"
+@using FlighReservationMS.Data
+
+<!--  --------------------------------------  FLIGHT FINDER  ----------------------------------------  !-->
+
+<h3>Flight Finder</h3>
+<div class="flightFinder">
+    <div>
+        <label>From:</label>
+        <p><input class="flightFinderInput" placeholder="Any" @bind="_originAirport" /></p>
+    </div>
+    <div>
+        <label>To:</label>
+        <p><input class="flightFinderInput" placeholder="Any" @bind="_destinationAirport" /></p>
+    </div>
+    <div>
+        <label>Day:</label>
+        <p><input class="flightFinderInput" placeholder="Any" @bind="_weekDayOfDeparture" /></p>
+    </div>
+    <button class="flightFinderButton" @onclick="searchFlight">Find flights</button>
+</div>
+
+<!--  ------------------------------------------  FLIGHTS  ------------------------------------------  !-->
+
+<h3>Flights</h3>
+
+<div class="flightFinder">
+    <select class="pageSize" id="dropdown" name="flightOptions">
+        @if (Flight.MatchingFlights?.Any() ?? false)
+        {
+            // to do: every item searched appears the same amount of times as its searching order, 
+            // instead of once.
+            @for (int i = 0; i < Flight.MatchingFlights.Count; i++)
+            @* @foreach (Flight flight in Flight.MatchingFlights) *@
+            {
+                <option>@Flight.MatchingFlights[i].ToString()</option>
+                @* <option>@flight.ToString()</option> *@
+            }
+        }
+        else
+        {
+            <option>Loading...</option>
+        }
+    </select>
+</div>
+
+
+<!--  ------------------------------------------  RESERVE  ------------------------------------------  !-->
+
+<h3 class="mainHeader">Reserve</h3>
+<div>
+    <label>Flight code:</label>
+    <input class="pageSize" placeholder="Flight" disabled />
+    <label>Airline:</label>
+    <input class="pageSize" placeholder="Airline" disabled />
+    <label>Day:</label>
+    <input class="pageSize" placeholder="Day" disabled />
+    <label>Time:</label>
+    <input class="pageSize" placeholder="Time" disabled />
+    <label>Cost:</label>
+    <input class="pageSize" placeholder="Cost" disabled />
+    <label>Name:</label>
+    <input class="pageSize" placeholder="Name" @bind="_name" />
+    <label>Citizenship:</label>
+    <input class="pageSize" placeholder="Citizenship" @bind="_citizenship" />
+</div>
+<button class="reserveButton">Reserve</button>
+<div style="margin-top: 30px;">Reservation Code: @newReservationCode</div>
+
+
+@code {
+    // Populated from Flight selection from the FLIGHT FINDER section
+    private string _flightCode;
+    private string _airline;
+    private string _timeOfDeparture;
+    private ushort _seatsAvailable;
+    private double _cost;
+
+    // Populated from the dropdown selection FLIGHT section
+    private string _originAirport;
+    private string _destinationAirport;
+    private string _weekDayOfDeparture;
+    Flight? selectedFlight; // it should not be null though
+
+    // Populated from the RESERVE section manual input entry
+    private string _name;
+    private string _citizenship;
+
+    // To make the search not case sensitive
+    private string lowerOriginAirport;
+    private string lowerDestinationAirport;
+    private string lowerWeekDayOfDeparture;
+
+    private string newReservationCode;
+
+
+    // // to have these variables coming out from the Picker/dropdown list selection
+    // // remove variable initialization
+    // private string _selectedflightCode;
+    // private string _selectedairline;
+    // private string _selectedoriginAirport;
+    // private string _selecteddestinationAirport;
+    // private string _selectedweekDayOfDeparture;
+    // private string _selectedtimeOfDeparture;
+    // private ushort _selectedSeatsAvailable;
+    // private double _selectedCost;
+    private string _status = "active";
+
+
+    private void searchFlight()
+    {
+        Flight.DigestFlightFile();
+
+        lowerOriginAirport = _originAirport.ToLower();
+        lowerDestinationAirport = _destinationAirport.ToLower();
+        lowerWeekDayOfDeparture = _weekDayOfDeparture.ToLower();
+
+        Flight.searchListOfFlight(
+        lowerOriginAirport,
+        lowerDestinationAirport,
+        lowerWeekDayOfDeparture);
+        
+        if (Flight.MatchingFlights.Count == 0)
+        {
+            noFlightFound();
+        }
+        // else
+        // {
+        //     return; // PopulateForm(selectedFlight);
+        // }
+
+    }
+    private void PopulateForm(Flight selectedFlight)
+    {
+        _flightCode = selectedFlight.FlightCode;
+        _airline = selectedFlight.Airline;
+        _originAirport = selectedFlight.OriginAirport;
+        _destinationAirport = selectedFlight.DestinationAirport;
+        _weekDayOfDeparture = selectedFlight.WeekDayOfDeparture;
+        _timeOfDeparture = selectedFlight.TimeOfDeparture;
+        _seatsAvailable = selectedFlight.SeatsAvailable;
+        _cost = selectedFlight.Cost;
+    }
+    private async Task noFlightFound()
+    {
+        await App.Current.MainPage.DisplayAlert("Flight not found", $"There is no flight departing from {_originAirport} to {_destinationAirport} on {_weekDayOfDeparture}.", "OK");
+    }
+
+    private void MakeReservation()
+    {
+        try
+        {
+            if (_flightCode != null && _name != null && _citizenship != null)
+            {
+                newReservationCode = ReservationManager.GenerateReservationCode();
+
+                Reservation savedReservation = new Reservation(
+                    _flightCode,
+                    _airline,
+                    _originAirport,
+                    _destinationAirport,
+                    _weekDayOfDeparture,
+                    _timeOfDeparture,
+                    _seatsAvailable,
+                    _cost,
+                    _name,
+                    _citizenship,
+                    _status,
+                    newReservationCode);
+            }
+            if (_flightCode == null)
+                throw new InvalidNullFlight();
+            if (_name == null)
+                throw new InvalidNullName();
+            if (_citizenship == null)
+                throw new InvalidNullCitizenship();
+        }
+        catch (InvalidNullFlight errorMessage)
+        {
+            Console.WriteLine(errorMessage);
+        }
+        catch (InvalidNullName errorMessage)
+        {
+            Console.WriteLine(errorMessage);
+        }
+        catch (InvalidNullCitizenship errorMessage)
+        {
+            Console.WriteLine(errorMessage);
+        }
+    }
+}

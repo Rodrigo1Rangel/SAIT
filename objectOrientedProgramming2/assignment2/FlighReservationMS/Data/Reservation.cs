@@ -6,26 +6,54 @@ using System.Threading.Tasks;
 
 namespace FlighReservationMS.Data
 {
-    public class Reservation
+    public class Reservation : Flight
     {
-        // =======================================  ATTRIBUTES =======================================
+        // ====================================  INSTANCE FIELDS =====================================
         private string _name;
         private string _citizenship;
         private string _status;
-        private readonly string _flightCode;
-        private readonly string _airlineName;
-        private readonly string _cost;
         private readonly string _reservationCode;
 
         // =======================================  PROPERTIES =======================================
-        public string TravellerName { get { return _name; } set { _name = value; } }
-        public string TravellerCitizenship { get { return _citizenship; } set { _citizenship = value; } }
+        public string Name { get { return _name; } set { _name = value; } }
+        public string Citizenship { get { return _citizenship; } set { _citizenship = value; } }
         public string Status { get { return _status; } set { _status = value; } }
-        public string FlightCode { get { return _status; } }
-        public string AirlineName { get { return _status; } }
-        public string Cost { get { return _status; } }
-        public string ReservationCode { get { return _status; } }
+        public string ReservationCode { get { return _reservationCode; } }
 
+        // =========================================  METHODS  ========================================
+        public override string ToString()
+        {
+            return $"{_reservationCode}, {_flightCode}, {_airline}, {_cost}, {_name}, {_citizenship}, {_status}";
+        }
 
+        // ======================================  CONSTRUCTOR  =======================================
+        public Reservation(
+            string flightCode,
+            string airline,
+            string originAirport,
+            string destinationAirport,
+            string weekDayOfDeparture,
+            string timeOfDeparture,
+            ushort seatsAvailable,
+            double cost,
+            string name,
+            string citizenship,
+            string status,
+            string reservationCode) :
+            base(
+                flightCode,
+                airline,
+                originAirport,
+                destinationAirport,
+                weekDayOfDeparture,
+                timeOfDeparture,
+                seatsAvailable,
+                cost)
+        {
+            _name = name;
+            _citizenship = citizenship;
+            _status = status;
+            _reservationCode = reservationCode;
+        }
     }
 }

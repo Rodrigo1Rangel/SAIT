@@ -205,4 +205,7 @@ C:\Users\rodri\OneDrive\Documents\GitHub\SAIT\objectOrientedProgramming2\assignm
 C:\Users\rodri\OneDrive\Documents\GitHub\SAIT\objectOrientedProgramming2\assignment2\FlighReservationMS\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\qualifiers.txt.intermediate
 C:\Users\rodri\OneDrive\Documents\GitHub\SAIT\objectOrientedProgramming2\assignment2\FlighReservationMS\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\MultipleQualifiersPerDimensionFound.txt
 C:\Users\rodri\OneDrive\Documents\GitHub\SAIT\objectOrientedProgramming2\assignment2\FlighReservationMS\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\ProjectArchitectures.txt
-C:\Users\rodri\OneDrive\Documents\GitHub\SAIT\objectOrientedProgramming2\assignment2\FlighReservationMS\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\scopedcss\Components\Pages\Flights.razor.rz.scp.css
+C:\Users\rodri\OneDrive\Documents\GitHub\SAIT\objectOrientedProgramming2\assignment2\FlighReservationMS\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\scopedcss\Components\Pages\FlightsPage.razor.rz.scp.css
+C:\Users\rodri\OneDrive\Documents\GitHub\SAIT\objectOrientedProgramming2\assignment2\FlighReservationMS\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\scopedcss\Components\Pages\ReservationsPage.razor.rz.scp.css
+C:\Users\rodri\OneDrive\Documents\GitHub\SAIT\objectOrientedProgramming2\assignment2\FlighReservationMS\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\FlighReservationMS.Properties.Resources.resources
+C:\Users\rodri\OneDrive\Documents\GitHub\SAIT\objectOrientedProgramming2\assignment2\FlighReservationMS\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\FlighReservationMS.csproj.GenerateResource.cache

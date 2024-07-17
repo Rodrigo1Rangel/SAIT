@@ -5,6 +5,11 @@ VisualStudioVersion = 17.10.35013.160
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FlighReservationMS", "FlighReservationMS.csproj", "{9E70A317-3BD3-45E6-A81A-0C69A30722E0}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTest", "..\UnitTest\UnitTest.csproj", "{2385FC67-4894-4391-B9CB-1F2C92804402}"
+	ProjectSection(ProjectDependencies) = postProject
+		{9E70A317-3BD3-45E6-A81A-0C69A30722E0} = {9E70A317-3BD3-45E6-A81A-0C69A30722E0}
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -17,6 +22,10 @@ Global
 		{9E70A317-3BD3-45E6-A81A-0C69A30722E0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9E70A317-3BD3-45E6-A81A-0C69A30722E0}.Release|Any CPU.Build.0 = Release|Any CPU
 		{9E70A317-3BD3-45E6-A81A-0C69A30722E0}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{2385FC67-4894-4391-B9CB-1F2C92804402}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2385FC67-4894-4391-B9CB-1F2C92804402}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2385FC67-4894-4391-B9CB-1F2C92804402}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2385FC67-4894-4391-B9CB-1F2C92804402}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -1,24 +1,45 @@
-flightFinder[b-b9w9ptvpay] {
+label[b-b9w9ptvpay] {
+    text-align: left;
+    display: block;
+}
+
+.flightFinder[b-b9w9ptvpay] {
     text-align: center;
     display: flex;
     margin-bottom: 50px;
 }
 
-flightFinderInput[b-b9w9ptvpay] {
+.flightFinderInput[b-b9w9ptvpay] {
+    width: 250px;
+    margin-right: 20px;
+}
+
+.flightFinderButton[b-b9w9ptvpay] {
+    width: 190px;
+    height:30px;
+    margin-top:25px;
+}
+
+.reserveButton[b-b9w9ptvpay] {
+    margin: auto;
+    margin-top: 30px;
     width: 200px;
-    margin-right: 100px;
+    height: 30px;
 }
 
-findFlightsButton[b-b9w9ptvpay] {
-    width: 300px;
-}
-
-reserveButton[b-b9w9ptvpay] {
-    width: 150px;
-    align-content: center;
-}
-
-mainHeader[b-b9w9ptvpay] {
-    align-content: center;
+.h3[b-b9w9ptvpay] {
+    align-self: center;
     margin-top: 50px;
 }
+
+.flightFinderDropdown[b-b9w9ptvpay] {
+    border: 1px solid #808080;
+    width: 1000px;
+    padding: 2px;
+    text-align: left;
+}
+
+.pageSize[b-b9w9ptvpay] {
+    width: 1000px;
+}
+

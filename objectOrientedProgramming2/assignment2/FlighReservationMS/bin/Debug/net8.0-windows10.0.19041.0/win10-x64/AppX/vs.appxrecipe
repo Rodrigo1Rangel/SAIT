@@ -29,13 +29,13 @@
     <AppXManifest Include="C:\Users\rodri\OneDrive\Documents\GitHub\SAIT\objectOrientedProgramming2\assignment2\FlighReservationMS\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2024-07-13T23:22:58.623</Modified>
+      <Modified>2024-07-17T14:18:44.481</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="C:\Users\rodri\OneDrive\Documents\GitHub\SAIT\objectOrientedProgramming2\assignment2\FlighReservationMS\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\resources.pri">
       <PackagePath>resources.pri</PackagePath>
-      <Modified>2024-07-13T17:56:32.803</Modified>
+      <Modified>2024-07-16T16:25:03.289</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\rodri\OneDrive\Documents\GitHub\SAIT\objectOrientedProgramming2\assignment2\FlighReservationMS\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\FlighReservationMS.runtimeconfig.json">
       <PackagePath>FlighReservationMS.runtimeconfig.json</PackagePath>
@@ -43,11 +43,11 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\rodri\OneDrive\Documents\GitHub\SAIT\objectOrientedProgramming2\assignment2\FlighReservationMS\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\FlighReservationMS.dll">
       <PackagePath>FlighReservationMS.dll</PackagePath>
-      <Modified>2024-07-13T23:22:58.313</Modified>
+      <Modified>2024-07-17T14:16:00.064</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\rodri\OneDrive\Documents\GitHub\SAIT\objectOrientedProgramming2\assignment2\FlighReservationMS\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\apphost.exe">
       <PackagePath>FlighReservationMS.exe</PackagePath>
-      <Modified>2024-07-13T23:22:58.323</Modified>
+      <Modified>2024-07-17T14:16:00.071</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\rodri\OneDrive\Documents\GitHub\SAIT\objectOrientedProgramming2\assignment2\FlighReservationMS\Resources\Raw\AboutAssets.txt">
       <PackagePath>AboutAssets.txt</PackagePath>
@@ -303,7 +303,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\rodri\OneDrive\Documents\GitHub\SAIT\objectOrientedProgramming2\assignment2\FlighReservationMS\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\FlighReservationMS.deps.json">
       <PackagePath>FlighReservationMS.deps.json</PackagePath>
-      <Modified>2024-07-13T17:45:37.955</Modified>
+      <Modified>2024-07-16T16:25:03.046</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\rodri\.nuget\packages\microsoft.windows.sdk.net.ref\10.0.19041.31\lib\net6.0\Microsoft.Windows.SDK.NET.dll">
       <PackagePath>Microsoft.Windows.SDK.NET.dll</PackagePath>
@@ -667,11 +667,11 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\rodri\OneDrive\Documents\GitHub\SAIT\objectOrientedProgramming2\assignment2\FlighReservationMS\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\scopedcss\bundle\FlighReservationMS.styles.css">
       <PackagePath>wwwroot\FlighReservationMS.styles.css</PackagePath>
-      <Modified>2024-07-13T22:47:36.162</Modified>
+      <Modified>2024-07-16T15:25:32.442</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\rodri\OneDrive\Documents\GitHub\SAIT\objectOrientedProgramming2\assignment2\FlighReservationMS\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\scopedcss\projectbundle\FlighReservationMS.bundle.scp.css">
       <PackagePath>wwwroot\FlighReservationMS.bundle.scp.css</PackagePath>
-      <Modified>2024-07-13T22:47:36.167</Modified>
+      <Modified>2024-07-16T15:25:32.442</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\rodri\OneDrive\Documents\GitHub\SAIT\objectOrientedProgramming2\assignment2\FlighReservationMS\Components\Layout\MainLayout.razor.css">
       <PackagePath>Components\Layout\MainLayout.razor.css</PackagePath>
@@ -681,9 +681,13 @@
       <PackagePath>Components\Layout\NavMenu.razor.css</PackagePath>
       <Modified>2024-07-13T15:20:25.627</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\rodri\OneDrive\Documents\GitHub\SAIT\objectOrientedProgramming2\assignment2\FlighReservationMS\Components\Pages\Flights.razor.css">
-      <PackagePath>Components\Pages\Flights.razor.css</PackagePath>
+    <AppxPackagedFile Include="C:\Users\rodri\OneDrive\Documents\GitHub\SAIT\objectOrientedProgramming2\assignment2\FlighReservationMS\Components\Pages\FlightsPage.razor.css">
+      <PackagePath>Components\Pages\FlightsPage.razor.css</PackagePath>
       <Modified>2024-07-13T22:47:35.502</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\rodri\OneDrive\Documents\GitHub\SAIT\objectOrientedProgramming2\assignment2\FlighReservationMS\Components\Pages\ReservationsPage.razor.css">
+      <PackagePath>Components\Pages\ReservationsPage.razor.css</PackagePath>
+      <Modified>2024-07-16T15:14:56.540</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>

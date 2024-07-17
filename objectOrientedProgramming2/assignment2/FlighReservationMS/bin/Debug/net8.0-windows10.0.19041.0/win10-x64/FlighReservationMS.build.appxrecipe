@@ -511,8 +511,11 @@
     <AppxPackagedFile Include="C:\Users\rodri\OneDrive\Documents\GitHub\SAIT\objectOrientedProgramming2\assignment2\FlighReservationMS\Components\Layout\NavMenu.razor.css">
       <PackagePath>Components\Layout\NavMenu.razor.css</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\rodri\OneDrive\Documents\GitHub\SAIT\objectOrientedProgramming2\assignment2\FlighReservationMS\Components\Pages\Flights.razor.css">
-      <PackagePath>Components\Pages\Flights.razor.css</PackagePath>
+    <AppxPackagedFile Include="C:\Users\rodri\OneDrive\Documents\GitHub\SAIT\objectOrientedProgramming2\assignment2\FlighReservationMS\Components\Pages\FlightsPage.razor.css">
+      <PackagePath>Components\Pages\FlightsPage.razor.css</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\rodri\OneDrive\Documents\GitHub\SAIT\objectOrientedProgramming2\assignment2\FlighReservationMS\Components\Pages\ReservationsPage.razor.css">
+      <PackagePath>Components\Pages\ReservationsPage.razor.css</PackagePath>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>
