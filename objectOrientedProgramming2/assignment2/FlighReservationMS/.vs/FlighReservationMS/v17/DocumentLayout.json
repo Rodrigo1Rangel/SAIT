@@ -7,20 +7,23 @@
       "RelativeMoniker": "D:0:0:{9E70A317-3BD3-45E6-A81A-0C69A30722E0}|FlighReservationMS.csproj|solutionrelative:components\\pages\\flightspage.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9E70A317-3BD3-45E6-A81A-0C69A30722E0}|FlighReservationMS.csproj|c:\\users\\rodri\\onedrive\\documents\\github\\sait\\objectorientedprogramming2\\assignment2\\flighreservationms\\data\\reservationmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9E70A317-3BD3-45E6-A81A-0C69A30722E0}|FlighReservationMS.csproj|solutionrelative:data\\reservationmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{9E70A317-3BD3-45E6-A81A-0C69A30722E0}|FlighReservationMS.csproj|c:\\users\\rodri\\onedrive\\documents\\github\\sait\\objectorientedprogramming2\\assignment2\\flighreservationms\\components\\pages\\reservationspage.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{9E70A317-3BD3-45E6-A81A-0C69A30722E0}|FlighReservationMS.csproj|solutionrelative:components\\pages\\reservationspage.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9E70A317-3BD3-45E6-A81A-0C69A30722E0}|FlighReservationMS.csproj|c:\\users\\rodri\\onedrive\\documents\\github\\sait\\objectorientedprogramming2\\assignment2\\flighreservationms\\data\\flight.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9E70A317-3BD3-45E6-A81A-0C69A30722E0}|FlighReservationMS.csproj|solutionrelative:data\\flight.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{9E70A317-3BD3-45E6-A81A-0C69A30722E0}|FlighReservationMS.csproj|c:\\users\\rodri\\onedrive\\documents\\github\\sait\\objectorientedprogramming2\\assignment2\\flighreservationms\\data\\reservationmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9E70A317-3BD3-45E6-A81A-0C69A30722E0}|FlighReservationMS.csproj|solutionrelative:data\\reservationmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|L:\\2nd_term\\object-oriented-programming-2-CPRG211\\assignment\\assignmentA2-Abstract Classes, Event Driven Applications and Exception Handling\\Grace\\CPRG-211-E-GLab-2-master\\CPRG-211-E-GLab-2-master\\CPRG211EGLab2\\Components\\Pages\\ReservationManager.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{9E70A317-3BD3-45E6-A81A-0C69A30722E0}|FlighReservationMS.csproj|c:\\users\\rodri\\onedrive\\documents\\github\\sait\\objectorientedprogramming2\\assignment2\\flighreservationms\\data\\reservation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{9E70A317-3BD3-45E6-A81A-0C69A30722E0}|FlighReservationMS.csproj|solutionrelative:data\\reservation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9E70A317-3BD3-45E6-A81A-0C69A30722E0}|FlighReservationMS.csproj|c:\\users\\rodri\\onedrive\\documents\\github\\sait\\objectorientedprogramming2\\assignment2\\flighreservationms\\data\\flight.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9E70A317-3BD3-45E6-A81A-0C69A30722E0}|FlighReservationMS.csproj|solutionrelative:data\\flight.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -40,7 +43,7 @@
               "RelativeDocumentMoniker": "Components\\Pages\\FlightsPage.razor",
               "ToolTip": "C:\\Users\\rodri\\OneDrive\\Documents\\GitHub\\SAIT\\objectOrientedProgramming2\\assignment2\\FlighReservationMS\\Components\\Pages\\FlightsPage.razor",
               "RelativeToolTip": "Components\\Pages\\FlightsPage.razor",
-              "ViewState": "AQIAADwAAAAAAAAAAAAYwEQAAAAAAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2024-07-13T15:48:41.587Z",
               "IsPinned": true,
@@ -48,26 +51,26 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Flight.cs",
-              "DocumentMoniker": "C:\\Users\\rodri\\OneDrive\\Documents\\GitHub\\SAIT\\objectOrientedProgramming2\\assignment2\\FlighReservationMS\\Data\\Flight.cs",
-              "RelativeDocumentMoniker": "Data\\Flight.cs",
-              "ToolTip": "C:\\Users\\rodri\\OneDrive\\Documents\\GitHub\\SAIT\\objectOrientedProgramming2\\assignment2\\FlighReservationMS\\Data\\Flight.cs",
-              "RelativeToolTip": "Data\\Flight.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABkAAAAAAAAA",
+              "DocumentIndex": 2,
+              "Title": "ReservationManager.cs",
+              "DocumentMoniker": "C:\\Users\\rodri\\OneDrive\\Documents\\GitHub\\SAIT\\objectOrientedProgramming2\\assignment2\\FlighReservationMS\\Data\\ReservationManager.cs",
+              "RelativeDocumentMoniker": "Data\\ReservationManager.cs",
+              "ToolTip": "C:\\Users\\rodri\\OneDrive\\Documents\\GitHub\\SAIT\\objectOrientedProgramming2\\assignment2\\FlighReservationMS\\Data\\ReservationManager.cs",
+              "RelativeToolTip": "Data\\ReservationManager.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABYAAAAJAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-13T17:23:56.719Z",
+              "WhenOpened": "2024-07-14T00:01:14.18Z",
               "IsPinned": true
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 1,
               "Title": "ReservationsPage.razor",
               "DocumentMoniker": "C:\\Users\\rodri\\OneDrive\\Documents\\GitHub\\SAIT\\objectOrientedProgramming2\\assignment2\\FlighReservationMS\\Components\\Pages\\ReservationsPage.razor",
               "RelativeDocumentMoniker": "Components\\Pages\\ReservationsPage.razor",
               "ToolTip": "C:\\Users\\rodri\\OneDrive\\Documents\\GitHub\\SAIT\\objectOrientedProgramming2\\assignment2\\FlighReservationMS\\Components\\Pages\\ReservationsPage.razor",
               "RelativeToolTip": "Components\\Pages\\ReservationsPage.razor",
-              "ViewState": "AQIAAAcAAAAAAAAAAAAewL0AAAAFAAAA",
+              "ViewState": "AQIAAKgAAAAAAAAAAAAAAG0AAAAnAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2024-07-13T15:48:53.605Z",
               "IsPinned": true
@@ -80,23 +83,52 @@
               "RelativeDocumentMoniker": "Data\\Reservation.cs",
               "ToolTip": "C:\\Users\\rodri\\OneDrive\\Documents\\GitHub\\SAIT\\objectOrientedProgramming2\\assignment2\\FlighReservationMS\\Data\\Reservation.cs",
               "RelativeToolTip": "Data\\Reservation.cs",
-              "ViewState": "AQIAABYAAAAAAAAAAAAkwB4AAAAAAAAA",
+              "ViewState": "AQIAABgAAAAAAAAAAAAQwCkAAAAVAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-16T18:25:53.077Z",
-              "IsPinned": true
+              "WhenOpened": "2024-07-21T23:36:00.624Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "ReservationManager.cs",
-              "DocumentMoniker": "C:\\Users\\rodri\\OneDrive\\Documents\\GitHub\\SAIT\\objectOrientedProgramming2\\assignment2\\FlighReservationMS\\Data\\ReservationManager.cs",
-              "RelativeDocumentMoniker": "Data\\ReservationManager.cs",
-              "ToolTip": "C:\\Users\\rodri\\OneDrive\\Documents\\GitHub\\SAIT\\objectOrientedProgramming2\\assignment2\\FlighReservationMS\\Data\\ReservationManager.cs",
-              "RelativeToolTip": "Data\\ReservationManager.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAADMAAAAHAAAA",
+              "DocumentIndex": 5,
+              "Title": "Flight.cs",
+              "DocumentMoniker": "C:\\Users\\rodri\\OneDrive\\Documents\\GitHub\\SAIT\\objectOrientedProgramming2\\assignment2\\FlighReservationMS\\Data\\Flight.cs",
+              "RelativeDocumentMoniker": "Data\\Flight.cs",
+              "ToolTip": "C:\\Users\\rodri\\OneDrive\\Documents\\GitHub\\SAIT\\objectOrientedProgramming2\\assignment2\\FlighReservationMS\\Data\\Flight.cs",
+              "RelativeToolTip": "Data\\Flight.cs",
+              "ViewState": "AQIAACAAAAAAAAAAAAAAADAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-14T00:01:14.18Z",
-              "IsPinned": true,
+              "WhenOpened": "2024-07-21T21:48:04.223Z"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "FloatingWindowState": {
+        "Id": "67c2f700-2031-4792-aaa4-683104906938",
+        "Display": 0,
+        "X": 292,
+        "Y": 25,
+        "Width": 1419,
+        "Height": 1012,
+        "WindowState": 0
+      },
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "ReservationManager.razor",
+              "DocumentMoniker": "L:\\2nd_term\\object-oriented-programming-2-CPRG211\\assignment\\assignmentA2-Abstract Classes, Event Driven Applications and Exception Handling\\Grace\\CPRG-211-E-GLab-2-master\\CPRG-211-E-GLab-2-master\\CPRG211EGLab2\\Components\\Pages\\ReservationManager.razor",
+              "ToolTip": "L:\\2nd_term\\object-oriented-programming-2-CPRG211\\assignment\\assignmentA2-Abstract Classes, Event Driven Applications and Exception Handling\\Grace\\CPRG-211-E-GLab-2-master\\CPRG-211-E-GLab-2-master\\CPRG211EGLab2\\Components\\Pages\\ReservationManager.razor",
+              "ViewState": "AQIAABUAAAAAAAAAAAAAACcAAAAQAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-07-22T01:34:03.11Z",
               "EditorCaption": ""
             }
           ]

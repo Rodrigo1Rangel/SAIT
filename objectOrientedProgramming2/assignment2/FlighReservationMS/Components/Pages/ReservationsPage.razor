@@ -6,22 +6,39 @@
 <h3>Reservation Finder</h3>
 <div class="reservationFinder">
     <div>
+        
         <label>Code:</label>
-        <p><input class="reservationFinderInput" placeholder="Any" @bind="flightCode"/></p>
+        <select class="reservationFinderInput" @onchange="DisplayCode">
+                <option disable>Select code</option>
+            @foreach (Reservation reservation in ReservationManager.ReservationList)
+                {
+                    <option>@reservation.ReservationCode</option>
+                }
+        </select>
     </div>
+
     <div>
         <label>Airline:</label>
-        <p><input class="reservationFinderInput" placeholder="Any" @bind="airline" /></p>
-        <!-- to do: detach it from the same field that fills up the reservation view, so we can have the
-             placeholder active. -->
+        <select class="reservationFinderInput" @onchange="DisplayAirline">
+        <option disable>Select airline</option>
+        @foreach (Reservation reservation in ReservationManager.ReservationList)
+        {
+        <option>@reservation.Airline</option>
+        }
+        </select>
     </div>
+
     <div>
         <label>Name:</label>
-        <p><input class="reservationFinderInput" placeholder="Any" @bind="name" /></p>
-        <!-- to do: detach it from the same field that fills up the reservation view, so we can have the
-        placeholder active. -->
+        <select class="reservationFinderInput" @onchange="DisplayName">
+            <option disable>Select name</option>
+            @foreach (Reservation reservation in ReservationManager.ReservationList)
+            {
+                <option>@reservation.Name</option>
+            }
+        </select>
     </div>
-    <button class="reservationFinderButton" @onclick="findReservation">Find reservations</button>
+    <button class="reservationFinderButton" @onclick="FindReservation">Find reservations</button>
 </div>
 
 <!--  ------------------------------------------  RESERVATIONS  ------------------------------------------  !-->
@@ -29,10 +46,10 @@
 <h3>Reservations</h3>
 
 <div class="reservationFinder">
-    <select class="pageSize" id="dropdown" name="flightOptions">
+    <select @onchange="SelectReservation" class="pageSize" id="dropdown" name="flightOptions">
         @foreach (Reservation reservation in ReservationManager.ReservationList)
         {
-            <option value="option1">@reservation.ToString()</option>
+            <option >@reservation.ToString()</option>
             <!-- to do: assign other variables according to the selection -->
         }
     </select>
@@ -44,28 +61,27 @@
 
 <div>
     <label>Reservation code:</label>
-    <input class="pageSize" placeholder="@reservationCode.ToLower()" disabled />
+    <input class="pageSize" placeholder="@_reservationCode" disabled />
     <label>Airline:</label>
-    <input class="pageSize" placeholder="@airline.ToLower()" disabled />
+    <input class="pageSize" placeholder="@_airline" disabled />
     <label>Day:</label>
-    <input class="pageSize" placeholder="@weekDayOfDeparture.ToLower()" disabled />
+    <input class="pageSize" placeholder="@_weekDayOfDeparture" disabled />
     <label>Time:</label>
-    <input class="pageSize" placeholder="@timeOfDeparture.ToLower()" disabled />
+    <input class="pageSize" placeholder="@_timeOfDeparture" disabled />
     <label>Cost:</label>
-    <input class="pageSize" placeholder="@cost" disabled />
+    <input class="pageSize" placeholder="@_cost" disabled />
 
     <!-- Modifications will only be allowed if an existing reservation was found in the system -->
     @if (isReservationModificationValid == true)
     {
         <label>Name:</label>
-        <input class="pageSize" placeholder="@name.ToLower()" />
+        <input class="pageSize" placeholder="@_name" />
         <label>Citizenship:</label>
-        <input class="pageSize" placeholder="@citizenship.ToLower()" />
+        <input class="pageSize" placeholder="@_citizenship" />
         <label>Status:</label>
-        <select class="pageSize" id="dropdown" name="flightOptions">
-            <!-- to do: how to make use of the selected value? JavaScript? -->
-            <option value="activeStatus">Active</option>
-            <option value="inactiveStatus">Inactive</option>
+        <select class="pageSize" @onchange="SelectReservationStatus">
+            <option value="active">Active</option>
+            <option value="inactive">Inactive</option>
         </select>
     }
     else
@@ -75,8 +91,7 @@
         <label>Citizenship:</label>
         <input class="pageSize" placeholder="Citizenship" disabled />
         <label>Status:</label>
-        <select class="pageSize" id="dropdown" name="flightOptions" disabled>
-            <!-- to do: how to make use of the selected value? JavaScript? -->
+        <select class="pageSize" disabled>
             <option value="activeStatus">Active</option>
             <option value="inactiveStatus">Inactive</option>
         </select>
@@ -86,81 +101,111 @@
 
 
 @code {
-    private string? flightCode;
-    private string airline = "Airline";
-    // private string? airline;
-    private string? originAirport;
-    private string? destinationAirport;
-    private string weekDayOfDeparture = "Day";
-    private string timeOfDeparture = "Time";
-    private ushort seatsAvailable = 0;
-    private double cost = 0D;
-    private string name = "Name";
-    // private string? name;
-    private string citizenship = "Citizenship";
-    private string? status;
-    private string reservationCode = "Flight";
-    Reservation? reservationToEdit;
+    private string? _flightCode= "";
+    private string _airline = "";
+    private string? _originAirport = "";
+    private string? _destinationAirport;
+    private string _weekDayOfDeparture = "";
+    private string _timeOfDeparture = "";
+    private ushort _seatsAvailable = 0;
+    private double _cost = 0;
+    private string _name = "";
+    private string _citizenship = "";
+    private string? _status = "";
+    private string _reservationCode = "";
     Reservation? reservationEdited;
     bool isReservationModificationValid = false;
 
-    public void findReservation()
+    // Flight that was selected from the dropdown list
+    private string selectedReservation = "Any";
+
+    // Assigning the searched values from the selector to variables
+    private string selectedCode = "";
+    private string selectedAirline = "";
+    private string selectedName = "";
+   
+    private void DisplayCode(ChangeEventArgs e)
     {
-        reservationToEdit = ReservationManager.searchReservation(reservationCode, airline, name);
-        if (reservationToEdit != null)
+        selectedCode = e.Value.ToString();
+    }
+
+    private void DisplayAirline(ChangeEventArgs e)
+    {
+        selectedAirline = e.Value.ToString();
+    }
+
+    private void DisplayName(ChangeEventArgs e)
+    {
+        selectedName = e.Value.ToString();
+    }
+
+    // STEP 0. Data digestion (RESERVATIONS)
+    public ReservationsPage()
+    {
+        ReservationManager.LoadReservationListFromFile();
+    }
+
+    // STEP 1. Search for existing reservations:
+    public void FindReservation()
+    {
+        ReservationManager.searchReservation(selectedCode, selectedAirline, selectedName);
+    }
+
+    // STEP 2. Selecting one of the existing reservations:
+
+    private void ParseSelectedReservation(string selectedReservation)
+    {
+        if (!string.IsNullOrEmpty(selectedReservation) && selectedReservation != "Any")
         {
-            flightCode = reservationToEdit.FlightCode;
-            airline = reservationToEdit.Airline;
-            originAirport = reservationToEdit.OriginAirport;
-            destinationAirport = reservationToEdit.DestinationAirport;
-            weekDayOfDeparture = reservationToEdit.WeekDayOfDeparture;
-            timeOfDeparture = reservationToEdit.TimeOfDeparture;
-            seatsAvailable = reservationToEdit.SeatsAvailable;
-            cost = reservationToEdit.Cost;
-            name = reservationToEdit.Name;
-            citizenship = reservationToEdit.Citizenship;
-            status = reservationToEdit.Status;
-            reservationCode = reservationToEdit.ReservationCode;
+            string[] reservationArguments = selectedReservation.Split(',');
+
+            _flightCode = reservationArguments[0].Trim();
+            _airline = reservationArguments[1].Trim();
+            _originAirport = reservationArguments[2].Trim();
+            _destinationAirport = reservationArguments[3].Trim();
+            _weekDayOfDeparture = reservationArguments[4].Trim();
+            _timeOfDeparture = reservationArguments[5].Trim();
+            ushort.TryParse(reservationArguments[6].Trim(), out ushort seatsAvailable);
+            double.TryParse(reservationArguments[7].Trim(), out double cost);
+            _seatsAvailable = seatsAvailable;
+            _cost = cost;
+            _name = reservationArguments[8].Trim();
+            _citizenship = reservationArguments[9].Trim();
+            _status = reservationArguments[10].Trim();
+            _reservationCode = reservationArguments[11].Trim();
 
             isReservationModificationValid = true;
-        }   
+        }
     }
+
+    public void SelectReservation(ChangeEventArgs e)
+    {
+        selectedReservation = e.Value.ToString();
+        ParseSelectedReservation(selectedReservation);
+    }
+
+    // STEP 3. Creating a new reservations with the modifications and removing the original one
+
     public void SaveModifications()
     {
-        // Supposing that every searchReservation will retrieve only one reservation:
-
         // If a reservation was found in the search, it will delete the original one.
         // If a reservation was not found, it will just delete a nullable reference.
         {
             if (isReservationModificationValid == true)
             {
                 reservationEdited = new Reservation(
-                flightCode,
-                airline,
-                originAirport,
-                destinationAirport,
-                weekDayOfDeparture,
-                timeOfDeparture,
-                seatsAvailable,
-                cost,
-                name,
-                citizenship,
-                status,
-                reservationCode);
-
-                //
-                //
-                //
-                //
-                //
-                //
-                // to-do: this is bypassed by the fact that the new reservation codes will never be the same,
-                // so I have to remove the previous one at the code creation moment
-                //
-                //
-                //
-                //
-                //
+                _flightCode,
+                _airline,
+                _originAirport,
+                _destinationAirport,
+                _weekDayOfDeparture,
+                _timeOfDeparture,
+                _seatsAvailable,
+                _cost,
+                _name,
+                _citizenship,
+                _status,
+                _reservationCode);
 
                 for (int i = 0; i < ReservationManager.ReservationList.Count; i++)
                 {
@@ -174,17 +219,24 @@
                 // Add the new or edited Reservation
                 ReservationManager.ReservationList.Add(reservationEdited);
                 ReservationManager.WriteReservationListToFile();
-                ReservationManager.LoadReservationListFromFile();
             }
             else
             {
                 AlertInvalidModificationAttempt();
             }
-
             // There is no way for the current program to delete a reservation.
         }
     }
-    public static async Task AlertInvalidModificationAttempt()
+
+    // to-do: to check the value
+    private void SelectReservationStatus(ChangeEventArgs e)
+    {
+        _status = e.Value.ToString();
+    }
+
+    // =====================================  ALERTS =====================================
+
+    public async Task AlertInvalidModificationAttempt()
     {
         await App.Current.MainPage.DisplayAlert("No Reservation Found", $"A valid reservation must be found in the system to perform modifications.", "OK");
     }

@@ -3,24 +3,12 @@
   "WorkspaceRootPath": "C:\\Users\\rodri\\OneDrive\\Documents\\GitHub\\SAIT\\objectOrientedProgramming2\\assignment1_abstract_class_and_inheritance\\assignment1_OOP2_SAIT\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{9D437D58-BC2F-49CE-86DC-56CA9BB4C40F}|assignment1_OOP2_SAIT.csproj|c:\\users\\rodri\\onedrive\\documents\\github\\sait\\objectorientedprogramming2\\assignment1_abstract_class_and_inheritance\\assignment1_oop2_sait\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9D437D58-BC2F-49CE-86DC-56CA9BB4C40F}|assignment1_OOP2_SAIT.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{9D437D58-BC2F-49CE-86DC-56CA9BB4C40F}|assignment1_OOP2_SAIT.csproj|C:\\Users\\rodri\\OneDrive\\Documents\\GitHub\\SAIT\\objectOrientedProgramming2\\assignment1_abstract_class_and_inheritance\\assignment1_OOP2_SAIT\\problemdomain\\appliance.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{9D437D58-BC2F-49CE-86DC-56CA9BB4C40F}|assignment1_OOP2_SAIT.csproj|solutionrelative:problemdomain\\appliance.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9D437D58-BC2F-49CE-86DC-56CA9BB4C40F}|assignment1_OOP2_SAIT.csproj|C:\\Users\\rodri\\OneDrive\\Documents\\GitHub\\SAIT\\objectOrientedProgramming2\\assignment1_abstract_class_and_inheritance\\assignment1_OOP2_SAIT\\problemdomain\\refrigerator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9D437D58-BC2F-49CE-86DC-56CA9BB4C40F}|assignment1_OOP2_SAIT.csproj|solutionrelative:problemdomain\\refrigerator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9D437D58-BC2F-49CE-86DC-56CA9BB4C40F}|assignment1_OOP2_SAIT.csproj|C:\\Users\\rodri\\OneDrive\\Documents\\GitHub\\SAIT\\objectOrientedProgramming2\\assignment1_abstract_class_and_inheritance\\assignment1_OOP2_SAIT\\problemdomain\\vacuum.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9D437D58-BC2F-49CE-86DC-56CA9BB4C40F}|assignment1_OOP2_SAIT.csproj|solutionrelative:problemdomain\\vacuum.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9D437D58-BC2F-49CE-86DC-56CA9BB4C40F}|assignment1_OOP2_SAIT.csproj|C:\\Users\\rodri\\OneDrive\\Documents\\GitHub\\SAIT\\objectOrientedProgramming2\\assignment1_abstract_class_and_inheritance\\assignment1_OOP2_SAIT\\problemdomain\\microwave.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9D437D58-BC2F-49CE-86DC-56CA9BB4C40F}|assignment1_OOP2_SAIT.csproj|solutionrelative:problemdomain\\microwave.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{9D437D58-BC2F-49CE-86DC-56CA9BB4C40F}|assignment1_OOP2_SAIT.csproj|c:\\users\\rodri\\onedrive\\documents\\github\\sait\\objectorientedprogramming2\\assignment1_abstract_class_and_inheritance\\assignment1_oop2_sait\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9D437D58-BC2F-49CE-86DC-56CA9BB4C40F}|assignment1_OOP2_SAIT.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{9D437D58-BC2F-49CE-86DC-56CA9BB4C40F}|assignment1_OOP2_SAIT.csproj|C:\\Users\\rodri\\OneDrive\\Documents\\GitHub\\SAIT\\objectOrientedProgramming2\\assignment1_abstract_class_and_inheritance\\assignment1_OOP2_SAIT\\problemdomain\\dishwasher.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -33,6 +21,18 @@
     {
       "AbsoluteMoniker": "D:0:0:{9D437D58-BC2F-49CE-86DC-56CA9BB4C40F}|assignment1_OOP2_SAIT.csproj|C:\\Users\\rodri\\OneDrive\\Documents\\GitHub\\SAIT\\objectOrientedProgramming2\\assignment1_abstract_class_and_inheritance\\assignment1_OOP2_SAIT\\problemdomain\\appliancedatatype.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{9D437D58-BC2F-49CE-86DC-56CA9BB4C40F}|assignment1_OOP2_SAIT.csproj|solutionrelative:problemdomain\\appliancedatatype.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9D437D58-BC2F-49CE-86DC-56CA9BB4C40F}|assignment1_OOP2_SAIT.csproj|C:\\Users\\rodri\\OneDrive\\Documents\\GitHub\\SAIT\\objectOrientedProgramming2\\assignment1_abstract_class_and_inheritance\\assignment1_OOP2_SAIT\\problemdomain\\refrigerator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9D437D58-BC2F-49CE-86DC-56CA9BB4C40F}|assignment1_OOP2_SAIT.csproj|solutionrelative:problemdomain\\refrigerator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9D437D58-BC2F-49CE-86DC-56CA9BB4C40F}|assignment1_OOP2_SAIT.csproj|C:\\Users\\rodri\\OneDrive\\Documents\\GitHub\\SAIT\\objectOrientedProgramming2\\assignment1_abstract_class_and_inheritance\\assignment1_OOP2_SAIT\\problemdomain\\vacuum.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9D437D58-BC2F-49CE-86DC-56CA9BB4C40F}|assignment1_OOP2_SAIT.csproj|solutionrelative:problemdomain\\vacuum.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9D437D58-BC2F-49CE-86DC-56CA9BB4C40F}|assignment1_OOP2_SAIT.csproj|C:\\Users\\rodri\\OneDrive\\Documents\\GitHub\\SAIT\\objectOrientedProgramming2\\assignment1_abstract_class_and_inheritance\\assignment1_OOP2_SAIT\\problemdomain\\microwave.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9D437D58-BC2F-49CE-86DC-56CA9BB4C40F}|assignment1_OOP2_SAIT.csproj|solutionrelative:problemdomain\\microwave.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -42,17 +42,17 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\rodri\\OneDrive\\Documents\\GitHub\\SAIT\\objectOrientedProgramming2\\assignment1_abstract_class_and_inheritance\\assignment1_OOP2_SAIT\\Program.cs",
               "RelativeDocumentMoniker": "Program.cs",
               "ToolTip": "C:\\Users\\rodri\\OneDrive\\Documents\\GitHub\\SAIT\\objectOrientedProgramming2\\assignment1_abstract_class_and_inheritance\\assignment1_OOP2_SAIT\\Program.cs",
               "RelativeToolTip": "Program.cs",
-              "ViewState": "AQIAAAsAAAAAAAAAAAAowCIAAAAAAAAA",
+              "ViewState": "AQIAAEABAAAAAAAAAAAowCIAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-06-16T10:02:18.316Z",
               "IsPinned": true,
@@ -60,20 +60,21 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "Appliance.cs",
               "DocumentMoniker": "C:\\Users\\rodri\\OneDrive\\Documents\\GitHub\\SAIT\\objectOrientedProgramming2\\assignment1_abstract_class_and_inheritance\\assignment1_OOP2_SAIT\\ProblemDomain\\Appliance.cs",
               "RelativeDocumentMoniker": "ProblemDomain\\Appliance.cs",
-              "ToolTip": "C:\\Users\\rodri\\OneDrive\\Documents\\GitHub\\SAIT\\objectOrientedProgramming2\\assignment1_abstract_class_and_inheritance\\assignment1_OOP2_SAIT\\ProblemDomain\\Appliance.cs",
-              "RelativeToolTip": "ProblemDomain\\Appliance.cs",
-              "ViewState": "AQIAABoAAAAAAAAAAAAAwDgAAAAzAAAA",
+              "ToolTip": "C:\\Users\\rodri\\OneDrive\\Documents\\GitHub\\SAIT\\objectOrientedProgramming2\\assignment1_abstract_class_and_inheritance\\assignment1_OOP2_SAIT\\ProblemDomain\\Appliance.cs*",
+              "RelativeToolTip": "ProblemDomain\\Appliance.cs*",
+              "ViewState": "AQIAAB8AAAAAAAAAAAAkwDIAAAAeAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-06-16T10:04:56.184Z",
-              "IsPinned": true
+              "IsPinned": true,
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 5,
               "Title": "Refrigerator.cs",
               "DocumentMoniker": "C:\\Users\\rodri\\OneDrive\\Documents\\GitHub\\SAIT\\objectOrientedProgramming2\\assignment1_abstract_class_and_inheritance\\assignment1_OOP2_SAIT\\ProblemDomain\\Refrigerator.cs",
               "RelativeDocumentMoniker": "ProblemDomain\\Refrigerator.cs",
@@ -86,7 +87,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 6,
               "Title": "Vacuum.cs",
               "DocumentMoniker": "C:\\Users\\rodri\\OneDrive\\Documents\\GitHub\\SAIT\\objectOrientedProgramming2\\assignment1_abstract_class_and_inheritance\\assignment1_OOP2_SAIT\\ProblemDomain\\Vacuum.cs",
               "RelativeDocumentMoniker": "ProblemDomain\\Vacuum.cs",
@@ -99,7 +100,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 7,
               "Title": "Microwave.cs",
               "DocumentMoniker": "C:\\Users\\rodri\\OneDrive\\Documents\\GitHub\\SAIT\\objectOrientedProgramming2\\assignment1_abstract_class_and_inheritance\\assignment1_OOP2_SAIT\\ProblemDomain\\Microwave.cs",
               "RelativeDocumentMoniker": "ProblemDomain\\Microwave.cs",
@@ -112,20 +113,21 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 2,
               "Title": "Dishwasher.cs",
               "DocumentMoniker": "C:\\Users\\rodri\\OneDrive\\Documents\\GitHub\\SAIT\\objectOrientedProgramming2\\assignment1_abstract_class_and_inheritance\\assignment1_OOP2_SAIT\\ProblemDomain\\Dishwasher.cs",
               "RelativeDocumentMoniker": "ProblemDomain\\Dishwasher.cs",
               "ToolTip": "C:\\Users\\rodri\\OneDrive\\Documents\\GitHub\\SAIT\\objectOrientedProgramming2\\assignment1_abstract_class_and_inheritance\\assignment1_OOP2_SAIT\\ProblemDomain\\Dishwasher.cs",
               "RelativeToolTip": "ProblemDomain\\Dishwasher.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAACsAAAAuAAAA",
+              "ViewState": "AQIAABgAAAAAAAAAAAAowCsAAAAuAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-06-16T10:05:36.38Z",
-              "IsPinned": true
+              "IsPinned": true,
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 3,
               "Title": "appliances.txt",
               "DocumentMoniker": "C:\\Users\\rodri\\OneDrive\\Documents\\GitHub\\SAIT\\objectOrientedProgramming2\\assignment1_abstract_class_and_inheritance\\assignment1_OOP2_SAIT\\Resources\\appliances.txt",
               "RelativeDocumentMoniker": "Resources\\appliances.txt",
@@ -133,11 +135,12 @@
               "RelativeToolTip": "Resources\\appliances.txt",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAATAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003109|",
-              "WhenOpened": "2024-06-17T21:53:29.123Z"
+              "WhenOpened": "2024-06-17T21:53:29.123Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 4,
               "Title": "ApplianceDataType.cs",
               "DocumentMoniker": "C:\\Users\\rodri\\OneDrive\\Documents\\GitHub\\SAIT\\objectOrientedProgramming2\\assignment1_abstract_class_and_inheritance\\assignment1_OOP2_SAIT\\ProblemDomain\\ApplianceDataType.cs",
               "RelativeDocumentMoniker": "ProblemDomain\\ApplianceDataType.cs",
@@ -145,7 +148,8 @@
               "RelativeToolTip": "ProblemDomain\\ApplianceDataType.cs",
               "ViewState": "AQIAAAsAAAAAAAAAAAAAABoAAAAIAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-17T00:14:43.894Z"
+              "WhenOpened": "2024-06-17T00:14:43.894Z",
+              "EditorCaption": ""
             }
           ]
         }

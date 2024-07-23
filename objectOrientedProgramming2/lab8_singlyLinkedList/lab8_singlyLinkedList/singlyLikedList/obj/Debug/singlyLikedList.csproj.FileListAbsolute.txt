@@ -1,0 +1,7 @@
+C:\Users\rodri\OneDrive\Documents\GitHub\SAIT\objectOrientedProgramming2\lab8_singlyLinkedList\singlyLikedList\bin\Debug\singlyLikedList.exe.config
+C:\Users\rodri\OneDrive\Documents\GitHub\SAIT\objectOrientedProgramming2\lab8_singlyLinkedList\singlyLikedList\bin\Debug\singlyLikedList.exe
+C:\Users\rodri\OneDrive\Documents\GitHub\SAIT\objectOrientedProgramming2\lab8_singlyLinkedList\singlyLikedList\bin\Debug\singlyLikedList.pdb
+C:\Users\rodri\OneDrive\Documents\GitHub\SAIT\objectOrientedProgramming2\lab8_singlyLinkedList\singlyLikedList\obj\Debug\singlyLikedList.csproj.AssemblyReference.cache
+C:\Users\rodri\OneDrive\Documents\GitHub\SAIT\objectOrientedProgramming2\lab8_singlyLinkedList\singlyLikedList\obj\Debug\singlyLikedList.csproj.CoreCompileInputs.cache
+C:\Users\rodri\OneDrive\Documents\GitHub\SAIT\objectOrientedProgramming2\lab8_singlyLinkedList\singlyLikedList\obj\Debug\singlyLikedList.exe
+C:\Users\rodri\OneDrive\Documents\GitHub\SAIT\objectOrientedProgramming2\lab8_singlyLinkedList\singlyLikedList\obj\Debug\singlyLikedList.pdb

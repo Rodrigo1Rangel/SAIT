@@ -1,5 +1,9 @@
 ﻿@page "/flights"
 @using FlighReservationMS.Data
+@using Microsoft.Extensions.Logging
+@inject ILogger<FlightsPage> _logger
+@using System.Globalization
+
 
 <!--  --------------------------------------  FLIGHT FINDER  ----------------------------------------  !-->
 
@@ -7,34 +11,52 @@
 <div class="flightFinder">
     <div>
         <label>From:</label>
-        <p><input class="flightFinderInput" placeholder="Any" @bind="_originAirport" /></p>
+        <select @onchange="selectFromAirportToFind" class="flightFinderInput">
+            <option disable>Select Airport</option>
+            <option>Any</option>
+            @foreach (Airport airport in AirportList)
+            {
+                <option value="@airport.AirportCode">@airport.AirportCode - @airport.AirportName</option>
+            }
+        </select>
+    </div>
+        <div>
+        <label>From:</label>
+        <select @onchange="selectToAirportToFind" class="flightFinderInput">
+            <option disable>Select Airport</option>
+            <option>Any</option>
+            @foreach (Airport airport in AirportList)
+            {
+                <option value="@airport.AirportCode">@airport.AirportCode - @airport.AirportName</option>
+            }
+        </select>
     </div>
     <div>
-        <label>To:</label>
-        <p><input class="flightFinderInput" placeholder="Any" @bind="_destinationAirport" /></p>
-    </div>
-    <div>
-        <label>Day:</label>
-        <p><input class="flightFinderInput" placeholder="Any" @bind="_weekDayOfDeparture" /></p>
+        <label>From:</label>
+        <select @onchange="selectDepartureDateToFind" class="flightFinderInput">
+            <option disable>Select Departure Date</option>
+            <option>Any</option>
+            @foreach (string day in DaysOfTheWeek)
+            {
+                <option value="@day">@day</option>
+            }
+        </select>
     </div>
     <button class="flightFinderButton" @onclick="searchFlight">Find flights</button>
 </div>
 
+
 <!--  ------------------------------------------  FLIGHTS  ------------------------------------------  !-->
+
 
 <h3>Flights</h3>
 
 <div class="flightFinder">
-    <select class="pageSize" id="dropdown" name="flightOptions">
-        @if (Flight.MatchingFlights?.Any() ?? false)
-        {
-            // to do: every item searched appears the same amount of times as its searching order, 
-            // instead of once.
-            @for (int i = 0; i < Flight.MatchingFlights.Count; i++)
-            @* @foreach (Flight flight in Flight.MatchingFlights) *@
+    <select class="pageSize" @onchange="SelectedFlight" name="flightToReserve" id="flights-select">
+        <option>Any</option>
+        @foreach (Flight flight in MatchingFlights)
             {
-                <option>@Flight.MatchingFlights[i].ToString()</option>
-                @* <option>@flight.ToString()</option> *@
+            <option value="@flight">@flight.ToString() </option>
             }
         }
         else
@@ -50,110 +72,171 @@
 <h3 class="mainHeader">Reserve</h3>
 <div>
     <label>Flight code:</label>
-    <input class="pageSize" placeholder="Flight" disabled />
+    <input class="pageSize" placeholder="Flight" @bind="_flightCode" disabled />
     <label>Airline:</label>
-    <input class="pageSize" placeholder="Airline" disabled />
+    <input class="pageSize" placeholder="Airline" @bind="_airline" disabled />
     <label>Day:</label>
-    <input class="pageSize" placeholder="Day" disabled />
+    <input class="pageSize" placeholder="Day" @bind="_weekDayOfDeparture" disabled />
     <label>Time:</label>
-    <input class="pageSize" placeholder="Time" disabled />
+    <input class="pageSize" placeholder="Time" @bind="_timeOfDeparture" disabled />
     <label>Cost:</label>
-    <input class="pageSize" placeholder="Cost" disabled />
+    <input class="pageSize" placeholder="Cost" @bind="_cost" disabled />
     <label>Name:</label>
     <input class="pageSize" placeholder="Name" @bind="_name" />
     <label>Citizenship:</label>
     <input class="pageSize" placeholder="Citizenship" @bind="_citizenship" />
 </div>
-<button class="reserveButton">Reserve</button>
-<div style="margin-top: 30px;">Reservation Code: @newReservationCode</div>
+<button class="reserveButton" @onclick="MakeReservation">Reserve</button>
+<div style="margin-top: 30px;">Reservation Code: @_newReservationCode</div>
 
 
 @code {
+    public string[] DaysOfTheWeek = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
 
+    // Flight that was selected from the dropdown list
+    private string selectedFlight = "";
+
+    // Variables to create a Reservation:
     // Populated from Flight selection from the FLIGHT FINDER section
-    private string _flightCode;
-    private string _airline;
-    private string _timeOfDeparture;
-    private ushort _seatsAvailable;
-    private double _cost;
-
-    // Populated from the dropdown selection FLIGHT section
-    private string _originAirport;
-    private string _destinationAirport;
-    private string _weekDayOfDeparture;
-    Flight? selectedFlight; // it should not be null though
-
-    // Populated from the RESERVE section manual input entry
-    private string _name;
-    private string _citizenship;
-
-    // To make the search not case sensitive
-    private string lowerOriginAirport;
-    private string lowerDestinationAirport;
-    private string lowerWeekDayOfDeparture;
-
-    private string newReservationCode;
-
-
-    // // to have these variables coming out from the Picker/dropdown list selection
-    // // remove variable initialization
-    // private string _selectedflightCode;
-    // private string _selectedairline;
-    // private string _selectedoriginAirport;
-    // private string _selecteddestinationAirport;
-    // private string _selectedweekDayOfDeparture;
-    // private string _selectedtimeOfDeparture;
-    // private ushort _selectedSeatsAvailable;
-    // private double _selectedCost;
+    // To be assigned values from the selected Flight object in the dropdown list
+    private string _originAirport = "";
+    private string _destinationAirport = "";
+    private string _weekDayOfDeparture = "";
+    private string _flightCode = "";
+    private string _airline = "";
+    private string _timeOfDeparture = "";
+    private ushort _seatsAvailable = 0;
+    private double _cost = 0;
+    // Upon reservation, the status is active by default
     private string _status = "active";
+    // Populated from the RESERVE section manual input entry
+    private string _name = "";
+    private string _citizenship = "";
+    private string _newReservationCode = "";
+
+    public List<Airport> AirportList = new List<Airport>();
+    static private List<Flight> _flightList = new List<Flight>();
+    static private List<Flight> _matchingFlights = new List<Flight>();
 
 
+    static public List<Flight> FlightList { get { return _flightList; } set { _flightList = value; } }
+    static public List<Flight> MatchingFlights { get { return _matchingFlights; } set { _matchingFlights = value; } }
+
+    // STEP 0. Data digestion (FLIGHTS and AIRPORTS)
+    public FlightsPage()
+    {
+        DigestAirportFile();
+        DigestFlightFile();
+    }
+
+    // ============================================================================================
+    // =========================================  METHODS  ========================================
+    // ============================================================================================
+
+    // STEP 1. Search for existing flights:
+
+    private void searchListOfFlight(
+    string selectedFromAirportToFind,
+    string selectedToAirportToFind,
+    string selectedDepartureDateToFind)
+    {
+        _matchingFlights.Clear();
+        for (int i = 0; i < FlightList.Count; i++)
+        {
+            if (FlightList[i].OriginAirport == selectedFromAirportToFind &&
+                FlightList[i].DestinationAirport == selectedToAirportToFind &&
+                FlightList[i].WeekDayOfDeparture == selectedDepartureDateToFind)
+            {
+                // Add matching flights to a list
+                if (!_matchingFlights.Contains(FlightList[i]))
+                {
+                    _matchingFlights.Add(FlightList[i]);
+                }
+                if (MatchingFlights.Count == 0)
+                {
+                    noFlightFound();
+                }
+            }
+        }
+    }
+
+    // Assigning the searched values from the selector to variables
+    public static string selectedFromAirportToFind = "Any";
+    public static string selectedToAirportToFind = "Any";
+    public static string selectedDepartureDateToFind = "Any";
+
+    private void selectFromAirportToFind(ChangeEventArgs e)
+    {
+        selectedFromAirportToFind = e.Value.ToString();
+    }
+    private void selectToAirportToFind(ChangeEventArgs e)
+    {
+        selectedToAirportToFind = e.Value.ToString();
+    }
+    private void selectDepartureDateToFind(ChangeEventArgs e)
+    {
+        selectedDepartureDateToFind = e.Value.ToString();
+    }
+
+    // Onclick method to be called to search flights button
     private void searchFlight()
     {
-        Flight.DigestFlightFile();
+        searchListOfFlight(
+        selectedFromAirportToFind,
+        selectedToAirportToFind,
+        selectedDepartureDateToFind);
+    }
 
-        lowerOriginAirport = _originAirport.ToLower();
-        lowerDestinationAirport = _destinationAirport.ToLower();
-        lowerWeekDayOfDeparture = _weekDayOfDeparture.ToLower();
 
-        Flight.searchListOfFlight(
-        lowerOriginAirport,
-        lowerDestinationAirport,
-        lowerWeekDayOfDeparture);
-        
-        if (Flight.MatchingFlights.Count == 0)
+    // STEP 2. Selecting one of the existing flights:
+
+    private void ParseSelectedFlight(string selectedFlight)
+    {
+        if (!string.IsNullOrEmpty(selectedFlight) && selectedFlight != "Any")
         {
-            noFlightFound();
-        }
-        // else
-        // {
-        //     return; // PopulateForm(selectedFlight);
-        // }
+            string[] flightArguments = selectedFlight.Split(',');
 
+            _flightCode = flightArguments[0].Trim();
+            _airline = flightArguments[1].Trim();
+            _originAirport = flightArguments[2].Trim();
+            _destinationAirport = flightArguments[3].Trim();
+            _weekDayOfDeparture = flightArguments[4].Trim();
+            _timeOfDeparture = flightArguments[5].Trim();
+            ushort.TryParse(flightArguments[6].Trim(), out ushort seatsAvailable);
+            double.TryParse(flightArguments[7].Trim(), out double cost);
+
+
+            // Check if there is any seat available, and remove one if so
+            if (seatsAvailable <= 0)
+            {
+                throw new InvalidSeatsAvailability();
+            }
+            else
+            {
+                seatsAvailable -= 1;
+                _seatsAvailable = seatsAvailable;
+                _cost = cost;
+            }
+        }
     }
-    private void PopulateForm(Flight selectedFlight)
+
+    public void SelectedFlight(ChangeEventArgs e)
     {
-        _flightCode = selectedFlight.FlightCode;
-        _airline = selectedFlight.Airline;
-        _originAirport = selectedFlight.OriginAirport;
-        _destinationAirport = selectedFlight.DestinationAirport;
-        _weekDayOfDeparture = selectedFlight.WeekDayOfDeparture;
-        _timeOfDeparture = selectedFlight.TimeOfDeparture;
-        _seatsAvailable = selectedFlight.SeatsAvailable;
-        _cost = selectedFlight.Cost;
+        selectedFlight = e.Value.ToString();
+        ParseSelectedFlight(selectedFlight);
     }
-    private async Task noFlightFound()
-    {
-        await App.Current.MainPage.DisplayAlert("Flight not found", $"There is no flight departing from {_originAirport} to {_destinationAirport} on {_weekDayOfDeparture}.", "OK");
-    }
+
+
+    // STEP 3. Making a reservation:
 
     private void MakeReservation()
     {
         try
         {
-            if (_flightCode != null && _name != null && _citizenship != null)
+            // If no field was left in blank:
+            if (_flightCode != "" || _name != "" || _citizenship != "")
             {
-                newReservationCode = ReservationManager.GenerateReservationCode();
+                _newReservationCode = ReservationManager.GenerateReservationCode();
 
                 Reservation savedReservation = new Reservation(
                     _flightCode,
@@ -167,7 +250,23 @@
                     _name,
                     _citizenship,
                     _status,
-                    newReservationCode);
+                    _newReservationCode);
+
+                ReservationManager.ReservationList.Add(savedReservation);
+                AlertReservationAdded(savedReservation);
+
+                // Reset to next reservation
+                _flightCode = "";
+                _airline = "";
+                _originAirport = "";
+                _destinationAirport = "";
+                _weekDayOfDeparture = "";
+                _timeOfDeparture = "";
+                _seatsAvailable = 0;
+                _cost = 0;
+                _name = "";
+                _citizenship = "";
+                _status = "";
             }
             if (_flightCode == null)
                 throw new InvalidNullFlight();
@@ -188,5 +287,103 @@
         {
             Console.WriteLine(errorMessage);
         }
+    }
+
+
+    // ================================== FILE ACCESSING ==================================
+
+    public void DigestFlightFile()
+    // Parse the flights.csv file into a single list
+    {
+        CultureInfo culture = new CultureInfo("en-US");
+        CultureInfo.DefaultThreadCurrentCulture = culture;
+        CultureInfo.DefaultThreadCurrentUICulture = culture;
+
+        string flightFilePath = @"C:\Users\rodri\OneDrive\Documents\GitHub\SAIT\objectOrientedProgramming2\assignment2\FlighReservationMS\Resources\flights.csv";
+
+
+        try
+        {
+            using (var reader = new StreamReader(flightFilePath))
+            {
+                string line;
+                while ((line = reader.ReadLine()) != null)
+                {
+                    if (line == "\n")
+                        // line.Trim().Length == 0
+                        continue;
+
+                    char delimiter = ',';
+                    string[] flightData = line.TrimEnd(delimiter).TrimStart('\n').Split(delimiter);
+
+                    // Converts and assigns each string from the flights text file to its respective
+                    // variable related to the Flight class.
+                    ushort.TryParse(flightData[6].Trim(), out ushort seatsAvailable);
+                    double.TryParse(flightData[7].Trim(), out double cost);
+
+                    FlightList.Add(
+                        new Flight(
+                        flightData[0],
+                        flightData[1],
+                        flightData[2],
+                        flightData[3],
+                        flightData[4],
+                        flightData[5],
+                        seatsAvailable,
+                        cost));
+
+                }
+            }
+        }
+        // to-do
+        catch (Exception ex)
+        {
+            _logger.LogError("Error loading airports", ex.Message);
+        }
+    }
+
+    public void DigestAirportFile()
+    {
+        CultureInfo culture = new CultureInfo("en-US");
+        CultureInfo.DefaultThreadCurrentCulture = culture;
+        CultureInfo.DefaultThreadCurrentUICulture = culture;
+        string airportFilePath = @"C:\Users\rodri\OneDrive\Documents\GitHub\SAIT\objectOrientedProgramming2\assignment2\FlighReservationMS\Resources\airports.csv";
+
+        try
+        {
+            using (var reader = new StreamReader(airportFilePath))
+            {
+                string line;
+                while ((line = reader.ReadLine()) != null)
+                {
+                    if (line.Trim().Length == 0)
+                        continue;
+
+                    var fields = line.Split(',');
+                    string airportCode = fields[0].Trim();
+                    string airportName = fields[1].Trim();
+
+                    AirportList.Add(new Airport(airportCode, airportName));
+                }
+            }
+        }
+        // to-do
+        catch (Exception ex)
+        {
+            _logger.LogError("Error loading airports", ex.Message);
+        }
+    }
+
+    // =====================================  ALERTS =====================================
+
+    private static async Task noFlightFound()
+    {
+        await App.Current.MainPage.DisplayAlert("Flight not found", $"There is no flight scheduled for this itinerary.", "OK");
+        // There is no flight departing from {_originAirport} to {_destinationAirport} on {_weekDayOfDeparture}.
+    }
+
+    public static async Task AlertReservationAdded(Reservation savedReservation)
+    {
+        await App.Current.MainPage.DisplayAlert("Reservation created", $"A new valid reservation was created.\nReservation Code: {savedReservation.ReservationCode}.", "OK");
     }
 }
